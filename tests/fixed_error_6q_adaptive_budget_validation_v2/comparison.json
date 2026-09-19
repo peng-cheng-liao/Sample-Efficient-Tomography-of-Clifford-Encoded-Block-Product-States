@@ -1,0 +1,130 @@
+{
+  "schema_version": 2,
+  "description": "Immediately previous versus cumulative-safety/incumbent-aware controlled 6q fixed-error 16-candidate benchmark",
+  "full_256_runs_launched": false,
+  "cases": {
+    "d1": {
+      "result_path": "tests/fixed_error_6q_adaptive_budget_validation_v2/d1.json",
+      "status": "completed_threshold_found",
+      "comparison": {
+        "previous_result_path": "tests/fixed_error_6q_adaptive_budget_validation/benchmark/d1.json",
+        "previous": {
+          "status": "runtime_failed",
+          "runtime_seconds": 658.1414691670798,
+          "unique_lambda_budget_trials": 497,
+          "unique_lambda_budget_seed_evaluations": 744,
+          "semantic_cache_hits": 184,
+          "largest_tested_budget": 317827579904,
+          "average_budget_trials_per_candidate": 31.0625,
+          "estimated_min_budget": null,
+          "note": "Partial lower-bound cost at the point of raw OverflowError."
+        },
+        "new": {
+          "status": "completed_threshold_found",
+          "runtime_seconds": 276.5648318340536,
+          "unique_lambda_budget_trials": 97,
+          "unique_lambda_budget_seed_evaluations": 532,
+          "semantic_cache_hits": 781,
+          "largest_tested_budget": 15415296,
+          "average_budget_trials_per_candidate": 6.0625,
+          "estimated_min_budget": 428608
+        },
+        "budget_trial_reduction_percentage": 80.48289738430584,
+        "learner_evaluation_reduction_percentage": 28.49462365591398,
+        "runtime_reduction_percentage": 57.977905239117646,
+        "maximum_tested_budget_reduction_percentage": 99.99514979285162
+      },
+      "acceptance_checks": {
+        "no_raw_numeric_overflow": true,
+        "cumulative_expansion_limit_respected": true,
+        "incumbent_pruning_activated": true,
+        "d1_grouping_allocation_zero": true,
+        "final_threshold_feasible": true,
+        "no_holdout_execution": true,
+        "full_256_not_launched": true
+      }
+    },
+    "d2": {
+      "result_path": "tests/fixed_error_6q_adaptive_budget_validation_v2/d2.json",
+      "status": "completed_threshold_found",
+      "comparison": {
+        "previous_result_path": "tests/fixed_error_6q_adaptive_budget_validation/benchmark/d2.json",
+        "previous": {
+          "status": "completed_threshold_found",
+          "runtime_seconds": 2346.886685458012,
+          "unique_lambda_budget_trials": 473,
+          "unique_lambda_budget_seed_evaluations": 1430,
+          "semantic_cache_hits": 1825,
+          "largest_tested_budget": 236223201280,
+          "average_budget_trials_per_candidate": 29.5625,
+          "estimated_min_budget": 638976,
+          "note": "Completed immediately previous 16-candidate adaptive benchmark."
+        },
+        "new": {
+          "status": "completed_threshold_found",
+          "runtime_seconds": 342.43212008301634,
+          "unique_lambda_budget_trials": 82,
+          "unique_lambda_budget_seed_evaluations": 444,
+          "semantic_cache_hits": 722,
+          "largest_tested_budget": 6729728,
+          "average_budget_trials_per_candidate": 5.125,
+          "estimated_min_budget": 587108
+        },
+        "budget_trial_reduction_percentage": 82.66384778012686,
+        "learner_evaluation_reduction_percentage": 68.95104895104896,
+        "runtime_reduction_percentage": 85.40909017018909,
+        "maximum_tested_budget_reduction_percentage": 99.9971511147239
+      },
+      "acceptance_checks": {
+        "no_raw_numeric_overflow": true,
+        "cumulative_expansion_limit_respected": true,
+        "incumbent_pruning_activated": true,
+        "d1_grouping_allocation_zero": null,
+        "final_threshold_feasible": true,
+        "no_holdout_execution": true,
+        "full_256_not_launched": true
+      }
+    },
+    "d3": {
+      "result_path": "tests/fixed_error_6q_adaptive_budget_validation_v2/d3.json",
+      "status": "completed_threshold_found",
+      "comparison": {
+        "previous_result_path": "tests/fixed_error_6q_adaptive_budget_validation/benchmark/d3.json",
+        "previous": {
+          "status": "completed_threshold_found",
+          "runtime_seconds": 1595.3709515000228,
+          "unique_lambda_budget_trials": 508,
+          "unique_lambda_budget_seed_evaluations": 1624,
+          "semantic_cache_hits": 2233,
+          "largest_tested_budget": 236223201280,
+          "average_budget_trials_per_candidate": 31.75,
+          "estimated_min_budget": 5138432,
+          "note": "Completed immediately previous 16-candidate adaptive benchmark."
+        },
+        "new": {
+          "status": "completed_threshold_found",
+          "runtime_seconds": 490.3800073750317,
+          "unique_lambda_budget_trials": 110,
+          "unique_lambda_budget_seed_evaluations": 610,
+          "semantic_cache_hits": 964,
+          "largest_tested_budget": 23662592,
+          "average_budget_trials_per_candidate": 6.875,
+          "estimated_min_budget": 4806478
+        },
+        "budget_trial_reduction_percentage": 78.34645669291339,
+        "learner_evaluation_reduction_percentage": 62.4384236453202,
+        "runtime_reduction_percentage": 69.26232065878098,
+        "maximum_tested_budget_reduction_percentage": 99.98998295177113
+      },
+      "acceptance_checks": {
+        "no_raw_numeric_overflow": true,
+        "cumulative_expansion_limit_respected": true,
+        "incumbent_pruning_activated": true,
+        "d1_grouping_allocation_zero": null,
+        "final_threshold_feasible": true,
+        "no_holdout_execution": true,
+        "full_256_not_launched": true
+      }
+    }
+  }
+}

@@ -1,0 +1,225 @@
+JOB 09 d=2/d=3 HPC DEPLOYMENT AND SUBMISSION REPORT
+Timestamp: 2026-09-01T18:34:38Z
+
+FINAL VERDICT: NOT_SUBMITTED
+
+Both packages were deployed non-destructively to their new Discovery d2/d3
+directories, but both mandatory HPC preflights failed their byte-identical
+deterministic-regeneration gate. Per the submission runbook, neither array was
+submitted.
+
+1. LOCAL PRE-DEPLOYMENT SANITY
+
+PASS.
+
+  d2:
+    configs: 160
+    n=2,...,9: exactly 20 each
+    task IDs: 0,...,159
+    required package files/runtime/provenance: present
+    Python syntax and JSON parse: PASS
+    bash -n: PASS
+    complete local preflight: PASS targets=160 failed=0 smoke=PASS
+
+  d3:
+    configs: 140
+    n=3,...,9: exactly 20 each
+    task IDs: 0,...,139
+    required package files/runtime/provenance: present
+    Python syntax and JSON parse: PASS
+    bash -n: PASS
+    complete local preflight: PASS targets=140 failed=0 smoke=PASS
+
+2. INITIAL HPC READ-ONLY AUDIT
+
+Host: discovery1.hpc.usc.edu
+Root: /home1/liaopeng/TomographyCliffordEncodedStates/09
+
+Present before deployment:
+  .venv, requirements.txt, test1, test2, audit, official d1 root files,
+  d1 configs/results/checkpoints/logs/runtime/manifests.
+
+Not present before deployment:
+  d2, d3.
+
+Initial duplicate-job check:
+  cebp09_d2_scaling: no RUNNING/PENDING job
+  cebp09_d3_scaling: no RUNNING/PENDING job
+
+3. SHARED ENVIRONMENT VALIDATION
+
+PASS; reused unchanged.
+
+  Python: 3.10.16
+  NumPy: 1.23.5
+  SciPy: 1.10.1
+  QuTiP: 5.2.1
+  Numba: absent
+
+The first login-node import attempted OpenBLAS's default 32 threads and hit a
+thread-creation limit. Repeating with all numerical thread counts set to one,
+as the production Slurm scripts do, imported all packages successfully. No
+package was installed, upgraded, or modified.
+
+4. RSYNC DRY RUNS
+
+Both dry runs were non-destructive and safe:
+  d2: proposed creation of only /09/d2 and its package contents
+  d3: proposed creation of only /09/d3 and its package contents
+
+No --delete option was used. No deletion was proposed. Source scope was exactly
+Jobs/09/d2/ and Jobs/09/d3/. Caches, pyc, pytest cache, DS_Store, __MACOSX, and
+temporary files were excluded.
+
+5. REAL SYNC
+
+Completed non-destructively:
+  Jobs/09/d2/ -> /home1/liaopeng/TomographyCliffordEncodedStates/09/d2/
+  Jobs/09/d3/ -> /home1/liaopeng/TomographyCliffordEncodedStates/09/d3/
+
+No whole-Job09 sync was performed. No existing d1/test1/test2/audit/environment
+path was a sync target. No existing output was deleted or truncated.
+
+6. LOCAL/HPC SHA VERIFICATION
+
+PASS for d2 and d3.
+
+Post-sync checksum rsync dry runs produced no changed-file output for either
+package. This verifies the deployed scripts, manifests, specifications,
+provenance manifests, all listed runtime files, and all 300 configs against the
+local bytes. The transfer itself is not the source of the preflight failure.
+
+7. RUNTIME PROVENANCE AND IMPORT LOCATIONS
+
+  d2 provenance: PASS
+    main: /09/d2/runtime/main.py
+    main_v2: /09/d2/runtime/main_v2.py
+    Optimization: /09/d2/runtime/Optimization/__init__.py
+
+  d3 provenance: PASS
+    main: /09/d3/runtime/main.py
+    main_v2: /09/d3/runtime/main_v2.py
+    Optimization: /09/d3/runtime/Optimization/__init__.py
+
+Production imports resolve from the correct study-local runtime and not from
+d1, test1, test2, the other d-study, or another Job directory.
+
+8. SELF-CONTAINMENT
+
+  d2: FAIL (blocked by nested mandatory preflight)
+  d3: FAIL (blocked by nested mandatory preflight)
+
+Each clean-room copy successfully started from only its study package and the
+shared environment. The nested preflight then failed deterministic regeneration:
+
+  d2 mismatch examples:
+    configs/n02/state00.json through configs/n02/state04.json
+
+  d3 mismatch examples:
+    configs/n03/state00.json through configs/n03/state04.json
+
+9. OPTIONAL NONZERO-GROUPING MICROCHECK
+
+SKIPPED. Once both mandatory preflights failed, submission was already blocked.
+No optional validation was used to weaken or bypass that gate.
+
+10. FULL HPC PREFLIGHTS
+
+  d2: FAIL, exit 1; not eligible for submission
+  d3: FAIL, exit 1; not eligible for submission
+
+Both preflights completed config parsing, manifest/config SHA validation,
+runtime provenance, explicit partition checks, seed/path checks, and canonical
+target verification for their full target loops before reaching the failing
+deterministic-regeneration comparison. They did not emit the mandatory final
+PASS summary.
+
+Exact d2 blocker:
+  RuntimeError: d=2 deterministic regeneration changed:
+  ['configs/n02/state00.json', ..., 'configs/n02/state04.json']
+
+Exact d3 blocker:
+  RuntimeError: d=3 deterministic regeneration changed:
+  ['configs/n03/state00.json', ..., 'configs/n03/state04.json']
+
+For d2 n02/state00, an in-memory diagnostic showed identical document size but
+different regenerated target hashes:
+
+  deployed canonical:
+    9f2cc1ce23178a43e47247d5462f0ca5f5fca48061a79ff147a03403e586134e
+  HPC-regenerated canonical:
+    0fadcd22446b86a60aa6e1aca9b5e76bdbf5612af601d21fe4f56c56bb6d7eb7
+  deployed legacy raw:
+    ac74b7b7239093842f79aea7a2180a8b256fdf8df8125bfe8f999d221a3c65bd
+  HPC-regenerated legacy raw:
+    377e93cec837c45c4efc5d4dee0f45e6b231ab0055a71ec98b8eb221d1e6be43
+
+The deployed frozen files themselves match local exactly. The blocker is that
+running freeze_targets.generate_documents() on Discovery does not reproduce
+the local frozen bytes/checkpoint fingerprints. This must be repaired or the
+cross-platform regeneration requirement must be deliberately redesigned and
+revalidated in a separate local update before submission.
+
+11. FINAL SLURM VALIDATION
+
+Both HPC-side scripts passed bash -n.
+
+  d2:
+    name cebp09_d2_scaling; array 0-159%20; 1 node; 1 task; 1 CPU;
+    16G; 48:00:00; epyc-64; qzhuang_922; requeue; no TERM signal.
+
+  d3:
+    name cebp09_d3_scaling; array 0-139%20; otherwise identical resources.
+
+Both use one manifest-resolved optimization per array task, the shared .venv,
+and their own runtime. There is no state packing or multiprocessing.
+
+12. FINAL DUPLICATE CHECK AND SUBMISSION
+
+Final squeue check:
+  cebp09_d2_scaling: no active job
+  cebp09_d3_scaling: no active job
+
+Submission results:
+  d2 JobID: NOT SUBMITTED
+  d3 JobID: NOT SUBMITTED
+
+No sbatch command was run.
+
+13. MONITORING AND INITIAL LOGS
+
+Not applicable because no job was submitted.
+
+  d2: RUNNING 0, PENDING 0, COMPLETED 0, FAILED 0
+  d3: RUNNING 0, PENDING 0, COMPLETED 0, FAILED 0
+
+No production logs/checkpoints/results were created by an array task.
+
+14. PRESERVATION CHECK
+
+PASS.
+
+Verified present after deployment:
+  official d1 root study, test1, test2, audit, .venv, requirements.txt,
+  d1 results, d1 checkpoints, and d1 logs.
+
+The existing HPC pilot-integrity validator reported:
+  test1: PASS
+  test2: PASS
+
+The shared environment was reused read-only. Scoped syncs could only create or
+update d2/d3 paths and did not target official d1 or archived pilot paths.
+
+15. NON-DESTRUCTIVE GUARANTEE
+
+  rsync --delete: NOT USED
+  rm/rm -rf on HPC: NOT USED
+  HPC file deletion: NONE
+  job cancellation: NONE
+  automatic resubmission: NONE
+  archived data loss: NONE
+  .venv modification: NONE
+
+FINAL VERDICT: NOT_SUBMITTED
+UNRESOLVED BLOCKER: cross-platform byte-identical frozen-target regeneration
+fails for both d2 and d3 on the validated Discovery environment.

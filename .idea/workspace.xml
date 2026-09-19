@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="21d3f216-3a6d-4df2-a0b7-891b8a6d4512" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Demo/DEMO_6Q_FIXED_BUDGET_MIN_ERROR_1M_REPORT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo/run_5q_fixed_error_min_copies.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo/run_5q_fixed_error_robustness.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo/run_6q_fixed_budget_min_error_1m.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo/run_6q_hs_local_runtime_benchmark.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo/run_cebp_demo_5qubit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo/run_demo_optimization.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo/run_small_cebp_demo_6qubit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/Optimization/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/Optimization/checkpoint.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/Optimization/objective.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/Optimization/parameterization.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/Optimization/progressive_search.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/Optimization/run_parameter_optimization.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/Optimization/search.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/Optimization/specification.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/README_HPC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/Reports/HPC_06_FINAL_READINESS_FIX_REPORT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/Reports/HPC_06_FULL_SCAN_256_CANDIDATE_UPDATE_REPORT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/Reports/HPC_06_FULL_SCAN_FINAL_READINESS_FIX_REPORT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/SOURCE_MANIFEST.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/cebp_compact.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/main_v2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/aggregate_calibration_benchmark.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/calibration_benchmark.sbatch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/collect_slurm_metrics.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/config/calibration_benchmark_manifest.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/config/experiment_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/config/full_scan_manifest.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/full_scan.sbatch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/generate_instances.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/hpc_smoke.sbatch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/instance_io.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/logs/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/logs/full_scan/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/manifest_utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/results/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/results_fixed_budget_v2/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/run_calibration_benchmark.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/run_lock.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_000.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_001.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_002.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_003.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_004.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_005.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_006.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_007.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_008.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_009.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_010.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_011.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_012.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_013.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_014.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_015.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_016.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_017.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_018.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/init_019.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/states/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/tmp/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/n=10_d=3/validate_instances.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/06/tests/test_hpc_readiness.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/logs/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/results/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_000.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_001.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_002.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_003.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_004.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_005.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_006.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_007.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_008.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_009.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_010.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_011.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_012.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_013.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_014.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_015.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_016.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_017.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_018.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/init_019.npz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/states/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/n=10_d=3/tmp/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/pauli_transforms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jobs/07/state_common.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Optimization.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Optimization/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Optimization/checkpoint.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Optimization/objective.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Optimization/parameterization.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Optimization/progressive_search.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Optimization/run_parameter_optimization.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Optimization/search.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Optimization/specification.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Optimization/tests/test_fixed_budget_numerical_semantics.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Optimization/tests/test_optimization_harness.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Optimization/tests/test_optimization_v2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Optimization/tests/test_progressive_search.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/run_exact_10q_3331_diagnostic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_exact_10q_3331_diagnostic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_exact_structured_backend.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_main_v2_compact_scaling.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_main_v2_fast_backend.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_main_v2_fixed_budget_graceful.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_main_v2_remaining_memory_parallelism.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHASE1_VERIFICATION_REPORT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHASE2_VERIFICATION_REPORT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHASE3_VERIFICATION_REPORT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHASE4_VERIFICATION_REPORT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHASE5_VERIFICATION_REPORT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHASE6_VERIFICATION_REPORT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHASE7_VERIFICATION_REPORT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_v2.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="38gGSSxQP4kwsUciqLhKHM7iFtU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.Test_ranking.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_processing_01.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_processing_01_v2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_processing_01_v3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_processing_02.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_processing_02_v2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_processing_03.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_processing_0405_compare_v1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_processing_0405_compare_v2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_processing_04_v1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_processing_04_v2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_processing_05_v1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.delta_verification.executor&quot;: &quot;Run&quot;,
+    &quot;Python.error_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.error_test_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.error_test_bell.executor&quot;: &quot;Run&quot;,
+    &quot;Python.error_test_mixed.executor&quot;: &quot;Run&quot;,
+    &quot;Python.error_test_pure.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scratch.executor&quot;: &quot;Run&quot;,
+    &quot;Python.small_example_recover_Q_from_ranking.executor&quot;: &quot;Run&quot;,
+    &quot;Python.task_tomography (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.task_tomography.executor&quot;: &quot;Run&quot;,
+    &quot;Python.task_tomography_generic.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;cebp-general-v2&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Demo" />
+      <recent name="$PROJECT_DIR$/Old Code" />
+      <recent name="$PROJECT_DIR$/Data_Processing" />
+      <recent name="$PROJECT_DIR$/Figs" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.data_processing_05_v1">
+    <configuration name="data_processing_0405_compare_v1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Tomography_Clifford_Encoded_States" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Data_Processing/data_processing_0405_compare_v1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="data_processing_0405_compare_v2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Tomography_Clifford_Encoded_States" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Data_Processing/data_processing_0405_compare_v2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="data_processing_04_v1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Tomography_Clifford_Encoded_States" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Data_Processing/data_processing_04_v1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="data_processing_05_v1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Tomography_Clifford_Encoded_States" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Data_Processing/data_processing_05_v1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Tomography_Clifford_Encoded_States" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Old Code/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="task_tomography_generic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Tomography_Clifford_Encoded_States" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/task_tomography_generic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.data_processing_0405_compare_v1" />
+      <item itemvalue="Python.data_processing_0405_compare_v2" />
+      <item itemvalue="Python.data_processing_05_v1" />
+      <item itemvalue="Python.task_tomography_generic" />
+      <item itemvalue="Python.data_processing_04_v1" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.data_processing_05_v1" />
+        <item itemvalue="Python.data_processing_0405_compare_v1" />
+        <item itemvalue="Python.data_processing_0405_compare_v2" />
+        <item itemvalue="Python.data_processing_04_v1" />
+        <item itemvalue="Python.task_tomography_generic" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="21d3f216-3a6d-4df2-a0b7-891b8a6d4512" name="Changes" comment="" />
+      <created>1769213800123</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1769213800123</updated>
+      <workItem from="1778260265488" duration="25000" />
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Old Code/main.py</url>
+          <line>1167</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Old Code/main.py</url>
+          <line>757</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Old Code/main.py</url>
+          <line>2935</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

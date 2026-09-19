@@ -1,0 +1,76 @@
+{
+  "0.8": {
+    "budget": 410366,
+    "fraction_D_gt_0_07": 0.9140625,
+    "fraction_D_le_0_05": 0.0859375,
+    "mean_error": 0.08878025726392115,
+    "mean_realized_copy_utilization": 0.9086157235248534,
+    "mean_tomography_accepted": 32891.0,
+    "median_error": 0.09607433531475014,
+    "minimum_tomography_accepted": 32891.0,
+    "percentile_90": 0.09739696282898229,
+    "recovered_rank_counts": {
+      "10": 117,
+      "11": 11
+    }
+  },
+  "1.0": {
+    "budget": 512957,
+    "fraction_D_gt_0_07": 0.4140625,
+    "fraction_D_le_0_05": 0.5859375,
+    "mean_error": 0.04496778970953373,
+    "mean_realized_copy_utilization": 0.9086180713003231,
+    "mean_tomography_accepted": 41114.0,
+    "median_error": 0.010387279403577792,
+    "minimum_tomography_accepted": 41114.0,
+    "percentile_90": 0.09660306703952387,
+    "recovered_rank_counts": {
+      "10": 53,
+      "11": 75
+    }
+  },
+  "1.25": {
+    "budget": 641196,
+    "fraction_D_gt_0_07": 0.03125,
+    "fraction_D_le_0_05": 0.96875,
+    "mean_error": 0.010896219825940516,
+    "mean_realized_copy_utilization": 0.9086176457744591,
+    "mean_tomography_accepted": 51392.0,
+    "median_error": 0.008160071764004694,
+    "minimum_tomography_accepted": 51392.0,
+    "percentile_90": 0.010236220299890747,
+    "recovered_rank_counts": {
+      "10": 4,
+      "11": 124
+    }
+  },
+  "1.5": {
+    "budget": 769436,
+    "fraction_D_gt_0_07": 0.0,
+    "fraction_D_le_0_05": 1.0,
+    "mean_error": 0.007523730326151731,
+    "mean_realized_copy_utilization": 0.9086161812028553,
+    "mean_tomography_accepted": 61670.0,
+    "median_error": 0.007551967349044109,
+    "minimum_tomography_accepted": 61670.0,
+    "percentile_90": 0.009175474108291507,
+    "recovered_rank_counts": {
+      "11": 128
+    }
+  },
+  "2.0": {
+    "budget": 1025914,
+    "fraction_D_gt_0_07": 0.0,
+    "fraction_D_le_0_05": 1.0,
+    "mean_error": 0.006420211475197646,
+    "mean_realized_copy_utilization": 0.9086170965597504,
+    "mean_tomography_accepted": 82227.0,
+    "median_error": 0.006551859429714502,
+    "minimum_tomography_accepted": 82227.0,
+    "percentile_90": 0.00766982134818523,
+    "recovered_rank_counts": {
+      "11": 90,
+      "12": 38
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "reference_classified_feasible": true,
+  "reference_pool_count": 128,
+  "reference_pool_mean": 0.04496778970953373,
+  "repetitions": 5000,
+  "sample_sizes": {
+    "16": {
+      "false_feasible_rate": 0.0,
+      "false_infeasible_rate": 0.3208,
+      "median_50": 0.04669699152722835,
+      "percentile_5": 0.030292475557027236,
+      "percentile_95": 0.06322680385400486,
+      "probability_classified_feasible": 0.6792,
+      "standard_deviation_of_estimated_mean": 0.010177990371638326
+    },
+    "32": {
+      "false_feasible_rate": 0.0,
+      "false_infeasible_rate": 0.19599999999999995,
+      "median_50": 0.04445502364700332,
+      "percentile_5": 0.0336085318269397,
+      "percentile_95": 0.05541598004271747,
+      "probability_classified_feasible": 0.804,
+      "standard_deviation_of_estimated_mean": 0.0066034197798642705
+    },
+    "4": {
+      "false_feasible_rate": 0.0,
+      "false_infeasible_rate": 0.538,
+      "median_50": 0.05170417784859915,
+      "percentile_5": 0.008726571782336353,
+      "percentile_95": 0.07483303262146308,
+      "probability_classified_feasible": 0.462,
+      "standard_deviation_of_estimated_mean": 0.021460377045994995
+    },
+    "8": {
+      "false_feasible_rate": 0.0,
+      "false_infeasible_rate": 0.43279999999999996,
+      "median_50": 0.04187663663231417,
+      "percentile_5": 0.01981507735114401,
+      "percentile_95": 0.0736279728130981,
+      "probability_classified_feasible": 0.5672,
+      "standard_deviation_of_estimated_mean": 0.014800847284059301
+    }
+  },
+  "sampling": "deterministic simple random subsampling without replacement",
+  "seed": 6250001
+}

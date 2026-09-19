@@ -1,0 +1,215 @@
+JOB 09 d=2/d=3 OFFICIAL SCALING — LOCAL UPDATE REPORT
+Date: 2026-09-01
+
+FINAL VERDICT: READY_FOR_HPC_DEPLOYMENT
+
+1. SCOPE AND HPC BOUNDARY
+
+This update created two independent local study packages at Jobs/09/d2 and
+Jobs/09/d3. It did not connect to HPC, inspect or modify HPC files, synchronize
+files to HPC, change any HPC environment, submit a job, or run any HPC command.
+The Slurm files are local deployment inputs only.
+
+Explicit boundary status:
+  NO HPC CONNECTION
+  NO HPC MODIFICATION
+  NO HPC SYNC
+  NO HPC ENVIRONMENT CHANGE
+  NO HPC JOB SUBMISSION
+
+2. d>=2 OPTIMIZER AUDIT
+
+The frozen Job 09 runtime was audited for the fixed_error_min_copies d>=2 path.
+The current implementation already supports:
+  - candidate conversion with ell_grp=d;
+  - the generic_d_ge_2 execution branch;
+  - peeling, recovery, grouping, syndrome/localization, and tomography stages;
+  - five-stage fixed-budget allocations, including a positive grouping cap;
+  - recovered-block tomography with register size bounded by d;
+  - an immediate scientific-copy-cap guard before every end-to-end call;
+  - Test-2 valid-candidate replacement and budget_cap_exhausted semantics; and
+  - checkpoint metadata matching against the full study identity.
+
+No optimizer/scientific logic change was required. Each new package contains an
+independent runtime snapshot. The only snapshot-level difference from the d1
+source is a lightweight diagnostic serialization addition in
+runtime/Optimization/objective.py. It exposes already-available grouping
+completion/success/budget-truncation and localization-bound fields. It does not
+change candidate generation, budgets, feasibility, estimation, or ranking.
+
+3. EXPERIMENT MATRIX
+
+  d=2: n=2,...,9; 20 targets per n; 160 optimizations
+  d=3: n=3,...,9; 20 targets per n; 140 optimizations
+  New total: 300 optimizations
+  Existing official d=1: 180 optimizations
+  Combined official total: 480 optimizations
+
+4. EXACT OFFICIAL PARTITIONS
+
+  d=2:
+    n=2 [2]
+    n=3 [2,1]
+    n=4 [2,2]
+    n=5 [2,2,1]
+    n=6 [2,2,2]
+    n=7 [2,2,2,1]
+    n=8 [2,2,2,2]
+    n=9 [2,2,2,2,1]
+
+  d=3:
+    n=3 [3]
+    n=4 [3,1]
+    n=5 [3,2]
+    n=6 [3,3]
+    n=7 [3,3,1]
+    n=8 [3,3,2]
+    n=9 [3,3,3]
+
+All 300 configs explicitly store block_sizes, and max(block_sizes)==d.
+
+5. SEED NAMESPACES
+
+  d=2 package namespace: jobs09-official-d2-scaling-v1
+    state base  9,120,000,000
+    search base 9,121,000,000
+    tuning base 9,122,000,000
+    task_id=(n-2)*20+state_index
+
+  d=3 package namespace: jobs09-official-d3-scaling-v1
+    state base  9,130,000,000
+    search base 9,131,000,000
+    tuning base 9,132,000,000
+    task_id=(n-3)*20+state_index
+
+Across the new studies, 6,300 role seeds were checked and all 6,300 were
+unique. State, partition, latent-state, Clifford, search, and all 16 tuning
+seeds are recorded for every task.
+
+6. FROZEN TARGETS AND MANIFESTS
+
+All targets were frozen before production execution was enabled:
+  d=2: 160/160 reconstructed fingerprints matched
+  d=3: 140/140 reconstructed fingerprints matched
+  combined: 300 fingerprints, 300 unique
+  overlap with official d1/test1/test2 fingerprints: 0
+
+Deterministic regeneration was byte-identical. Each target record includes d,
+n, state index, exact partition, task identity, complete seed ledger, canonical
+fingerprint, config SHA-256, and latent-block verification data. The manifests
+contain gap-free task IDs, exact boundary mappings, unique mutable paths, and
+the required result/checkpoint/log identities. Production runners reject a
+missing or inconsistent frozen target instead of regenerating it.
+
+7. SCIENTIFIC OPTIMIZATION SEMANTICS
+
+Both studies preserve the official/Test-2 definition:
+  objective: fixed_error_min_copies
+  target mean trace distance: 0.05
+  success probability threshold: 0.50
+  feasibility: mean trace distance <=0.05 AND successes >=8/16
+  scientific copy cap: 1,000,000,000
+  candidate schedule: [16,32,64,128,256]
+  maximum valid candidates: 256
+  holdout: disabled
+
+Static and runtime cap guards rejected a 1,000,000,001-copy request. Candidate
+quota, raw draw, cap rejection, budget exhaustion, E2E budget, terminal reason,
+wall-time, configuration, provenance, recovered structure, grouping, stage
+allocation, and tomography-register diagnostics are serialized in results.
+
+8. GENERAL BRANCH / GROUPING VALIDATION
+
+Both representative numerical smokes resolved generic_d_ge_2, not the d1
+specialized branch. Both set ell_grp=d, executed a grouping stage record, and
+allocated 1,454 of 3,000 smoke copies to grouping. The representative targets
+recovered no sectors, so realized grouping queries/copies were zero; this is a
+valid data-dependent no-query result, not a disabled stage. Register-size bound
+checks passed. The production result gate also requires grouping allocation.
+
+9. RUNTIME SELF-CONTAINMENT AND PROVENANCE
+
+Each package imports scientific code only from its own runtime directory. Each
+runtime contains 11 hashed Python sources. Provenance verification passed for
+both packages. Clean-room copies containing only Jobs/09/d2 or Jobs/09/d3 each
+passed their full isolated preflight and numerical smoke. Deliberately modifying
+runtime/main.py in each temporary copy was rejected by the provenance gate.
+
+10. CHECKPOINT / RESULT / LOG ISOLATION
+
+The new configs define 900 unique mutable config paths (result, status, and
+checkpoint) across the two study namespaces; manifest log identities are also
+unique. Checkpoint keys encode revision, d, n, state, target fingerprint,
+fixed-error target/threshold, 8-of-16 requirement, 1e9 cap, and schedule.
+Wrong-d, wrong-n, wrong-state, wrong-fingerprint, and d1 identities were
+rejected in preflight checkpoint tests. Writes use atomic replacement.
+
+11. LOCAL SLURM DESIGN
+
+  d=2: array 0-159%20, job cebp09_d2_scaling
+  d=3: array 0-139%20, job cebp09_d3_scaling
+  both: 1 node, 1 task, 1 CPU, 16G, 48:00:00, epyc-64,
+        account qzhuang_922, requeue enabled, no unhandled TERM signal
+
+There is one optimization per array element and no state packing or added CPU
+parallelism. Both scripts passed bash -n.
+
+12. NUMERICAL SMOKE TESTS
+
+Exact local environment was available (Python 3.10.4, NumPy 1.23.5,
+SciPy 1.10.1, QuTiP 5.2.1).
+
+  d=2 n=2/state00: PASS
+    branch=generic_d_ge_2, budget=3000, realized=724,
+    trace_distance=0.445891003, grouping realized/allocated=0/1454
+
+  d=3 n=3/state00: PASS
+    branch=generic_d_ge_2, budget=3000, realized=724,
+    trace_distance=0.425803890, grouping realized/allocated=0/1454
+
+These are structural learner smokes, not full 256-candidate optimizations.
+
+13. TEST AND PREFLIGHT SUMMARY
+
+  d2 focused regression tests: 7 passed
+  d3 focused regression tests: 7 passed
+  existing d1 Job 09 tests: 10 passed
+  total focused unit tests: 24 passed, 0 failed
+  d2 full preflight: PASS, 160 targets, smoke PASS
+  d3 full preflight: PASS, 140 targets, smoke PASS
+  d2 clean-room self-containment: PASS
+  d3 clean-room self-containment: PASS
+  Python syntax checks: PASS (34 files)
+  JSON parse checks: PASS (308 files)
+  Slurm syntax checks: PASS (2 files)
+
+Four optional repository-root Optimization pytest modules were discovered but
+not executed because pytest is not installed in the exact local environment.
+Their Job 09 semantics are covered by the passing package-specific tests and
+preflights. No mandatory check was skipped or failed.
+
+14. EXISTING STUDY INTEGRITY
+
+  Existing official d1: PASS, unchanged
+    206 entries
+    SHA-256 254ade33247d9d6c236ad1847a5ae32bb54d67bb0682254e4148d99e3d6b49a8
+
+  Archived test1: PASS, unchanged
+    37 entries
+    SHA-256 65a69e39137945b316623b8dc433645dc5ffa8462f221d7a94a62ccd7654157f
+
+  Archived test2: PASS, unchanged
+    40 entries
+    SHA-256 5ecd6242456b0f4d4ef1723b31e8415a41b31482c87ea5663f7978a8fe2f4b45
+
+The pre-edit and post-edit hashes match exactly. Existing d1 scientific/config/
+runtime files and all archived pilot contents were not modified.
+
+15. CACHE AND ARTIFACT HYGIENE
+
+The new d2/d3 trees contain no __pycache__, pyc, pytest cache, DS_Store,
+temporary smoke results, temporary checkpoints, temporary logs, or temporary
+diagnostics. Intentional .gitkeep placeholders were retained. Pre-existing d1
+and pilot operational data were left alone.
+
+FINAL VERDICT: READY_FOR_HPC_DEPLOYMENT

@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "status": "runtime_failed",
+  "stage": "benchmark",
+  "configuration": {
+    "n": 6,
+    "d": 1,
+    "partition": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "mode": "fixed_error_min_copies",
+    "error_target": 0.05,
+    "success_probability_threshold": 0.85,
+    "final_tuning_seed_count": 16,
+    "required_success_count": 14,
+    "state_generation_seed": 6201001,
+    "search_seed": 6200501,
+    "tuning_seeds": [
+      6210001,
+      6210002,
+      6210003,
+      6210004,
+      6210005,
+      6210006,
+      6210007,
+      6210008,
+      6210009,
+      6210010,
+      6210011,
+      6210012,
+      6210013,
+      6210014,
+      6210015,
+      6210016
+    ],
+    "historical_holdout_seeds_configured_but_unused": [
+      6220001,
+      6220002,
+      6220003,
+      6220004
+    ],
+    "scientific_copy_ceiling": null,
+    "legacy_total_copies_api_argument_inert": 1,
+    "initial_budget_hint": null,
+    "budget_growth_factor": 2.0,
+    "budget_relative_tolerance": 0.01,
+    "max_budget_expansion_rounds": 32,
+    "hard_safety_budget": null,
+    "candidate_progression": [16],
+    "seed_fidelity_progression": [1, 2, 4, 8, 16],
+    "relative_improvement_threshold": 0.0
+  },
+  "state_identity": {
+    "state_generation_seed_matches": true,
+    "seed_ledger_matches": true,
+    "raw_dense_digest_matches": false,
+    "repeated_raw_dense_digest_matches": true,
+    "repeated_state_max_abs_difference": 0.0,
+    "encoder_sampling_matches": true,
+    "encoder_steps_matches": true,
+    "hidden_partition_matches": true,
+    "current_state_digest_sha256": "55d8fb691b195ab82ab46a20df485c71618c68b80071690bb38576df367c05ec",
+    "prior_state_digest_sha256": "e1576b5e473add8fcde7c226f89d312f8d67afabf127904879300464a64920b0",
+    "state_seed_ledger": {
+      "master_seed": 6201001,
+      "partition_seed": 1197665283158166311,
+      "latent_state_seed": 5337268462070845693,
+      "clifford_seed": 9971346628464947877
+    }
+  },
+  "runtime_seconds": 658.1414691670798,
+  "failure": {
+    "exception_type": "OverflowError",
+    "exception_message": "Python int too large to convert to C long",
+    "traceback": "Traceback (most recent call last):\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/tests/fixed_error_6q_adaptive_budget_validation/run_fixed_error_6q_adaptive_budget_validation.py\", line 620, in run_case\n    result = optimize_cebp_parameters_progressive(\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/Optimization/progressive_search.py\", line 1021, in optimize_cebp_parameters_progressive\n    return _optimize_fixed_error_progressive(\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/Optimization/progressive_search.py\", line 743, in _optimize_fixed_error_progressive\n    results = [\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/Optimization/progressive_search.py\", line 744, in <listcomp>\n    threshold_for(\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/Optimization/progressive_search.py\", line 698, in threshold_for\n    result = estimate_minimum_feasible_budget(\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/Optimization/fixed_error_budget.py\", line 257, in estimate_minimum_feasible_budget\n    observe(proposed)\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/Optimization/fixed_error_budget.py\", line 234, in observe\n    evaluate_budget(budget),\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/Optimization/progressive_search.py\", line 703, in <lambda>\n    evaluate_budget=lambda budget: evaluate_structural_budget(\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/Optimization/progressive_search.py\", line 673, in evaluate_structural_budget\n    return evaluate_candidate(\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/Optimization/objective.py\", line 841, in evaluate_candidate\n    result_cache[key] = evaluate_candidate_on_seed(\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/tests/fixed_error_6q_adaptive_budget_validation/run_fixed_error_6q_adaptive_budget_validation.py\", line 614, in tracked\n    return original(*args, **kwargs)\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/Optimization/objective.py\", line 530, in evaluate_candidate_on_seed\n    return _run_candidate_on_seed(\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/Optimization/objective.py\", line 330, in _run_candidate_on_seed\n    result = full_cebp_tomography(learner_view, config=learner_config)\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/main_v2.py\", line 9597, in full_cebp_tomography\n    result = _full_cebp_tomography_impl(\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/main_v2.py\", line 9160, in _full_cebp_tomography_impl\n    return _full_cebp_tomography_fixed_budget_graceful(\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/main_v2.py\", line 8875, in _full_cebp_tomography_fixed_budget_graceful\n    recovery = empirical_rank_guided_sector_recovery(\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/main_v2.py\", line 358, in wrapped\n    return function(*args, **kwargs)\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/main_v2.py\", line 4277, in empirical_rank_guided_sector_recovery\n    record = sample_peeled_bell_scores(\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/main_v2.py\", line 4043, in sample_peeled_bell_scores\n    return sample_bell_scores(\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/main_v2.py\", line 2990, in sample_bell_scores\n    outcomes, counts, stage_wall_times = measurement_source._sample_bell_for_backend(\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/main_v2.py\", line 587, in _sample_bell_for_backend\n    counts, diagnostics = self._structured_state.sample_bell_counts(\n  File \"/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/cebp_compact.py\", line 903, in sample_bell_counts\n    counts = np.random.default_rng(seed).multinomial(int(rounds), probabilities)\n  File \"_generator.pyx\", line 3882, in numpy.random._generator.Generator.multinomial\nOverflowError: Python int too large to convert to C long\n"
+  },
+  "production_hashes_before": {
+    "main_v2.py": "7ba33d062fb6bf0b1934d79ed6eff433f6cc6cc6bdf5cee371ec5e32ff684ce7",
+    "Optimization/__init__.py": "bb5d2756fe79626916b7af91613babfeb7cc6f89e76eb29d7ee5f741e600e950",
+    "Optimization/checkpoint.py": "a54791cc013958ba3c9a402afe656f21a51c5854b88b8b301bd947c3a0c67094",
+    "Optimization/fixed_error_budget.py": "759061fc29f9c89cdc8d6c75500b20a0dea5838a7290ee2e9ae4848a2c5c2307",
+    "Optimization/objective.py": "68af43215fdad80cde8a65cbb37404c624936bba96bbaf23c4a68cb5e0a37c17",
+    "Optimization/parameterization.py": "059e60bc7975dcf85681e08446abeefce17d2e12669b8f951b2db59ae25f0546",
+    "Optimization/progressive_search.py": "5c87f1c9537092cb30c3e1f37306352e9a8bfe07b0116cf2ac5d6e08462c5b2b",
+    "Optimization/run_parameter_optimization.py": "6c29957f7b6652075fab1a65fd6cd9a4a258fa65c54b36e3a1f9b0c309777feb",
+    "Optimization/search.py": "df38c69ef6e645315bc27ebed5cacb825fb0463889ea5ea699b5b0f24bcf943b",
+    "Optimization/specification.py": "74deb4388c395fbc3d48298d1b08fe2beb86ebbee937c6d538e0d4dcdb70e580"
+  },
+  "production_hashes_after": {
+    "main_v2.py": "7ba33d062fb6bf0b1934d79ed6eff433f6cc6cc6bdf5cee371ec5e32ff684ce7",
+    "Optimization/__init__.py": "bb5d2756fe79626916b7af91613babfeb7cc6f89e76eb29d7ee5f741e600e950",
+    "Optimization/checkpoint.py": "a54791cc013958ba3c9a402afe656f21a51c5854b88b8b301bd947c3a0c67094",
+    "Optimization/fixed_error_budget.py": "759061fc29f9c89cdc8d6c75500b20a0dea5838a7290ee2e9ae4848a2c5c2307",
+    "Optimization/objective.py": "68af43215fdad80cde8a65cbb37404c624936bba96bbaf23c4a68cb5e0a37c17",
+    "Optimization/parameterization.py": "059e60bc7975dcf85681e08446abeefce17d2e12669b8f951b2db59ae25f0546",
+    "Optimization/progressive_search.py": "5c87f1c9537092cb30c3e1f37306352e9a8bfe07b0116cf2ac5d6e08462c5b2b",
+    "Optimization/run_parameter_optimization.py": "6c29957f7b6652075fab1a65fd6cd9a4a258fa65c54b36e3a1f9b0c309777feb",
+    "Optimization/search.py": "df38c69ef6e645315bc27ebed5cacb825fb0463889ea5ea699b5b0f24bcf943b",
+    "Optimization/specification.py": "74deb4388c395fbc3d48298d1b08fe2beb86ebbee937c6d538e0d4dcdb70e580"
+  },
+  "production_files_unchanged": true,
+  "prior_result_hashes_before": {
+    "tests/fixed_error_6q_mean_success_validation/d1/result.json": "ba7fd53780183b14e5bdbe1ed2466e2fae7a617d0bf95b8afe79380277bb1fa4",
+    "tests/fixed_error_6q_mean_success_validation/d2/result.json": "dd9d24b1b82c09c4f83e5389eca752c180853b55ae164e9f4d84eb4bc06b1b75",
+    "tests/fixed_error_6q_mean_success_validation/d3/result.json": "159afcc719ee215af523144283bf2924a1ee63751aee39aeed2d873e0785f021"
+  },
+  "prior_result_hashes_after": {
+    "tests/fixed_error_6q_mean_success_validation/d1/result.json": "ba7fd53780183b14e5bdbe1ed2466e2fae7a617d0bf95b8afe79380277bb1fa4",
+    "tests/fixed_error_6q_mean_success_validation/d2/result.json": "dd9d24b1b82c09c4f83e5389eca752c180853b55ae164e9f4d84eb4bc06b1b75",
+    "tests/fixed_error_6q_mean_success_validation/d3/result.json": "159afcc719ee215af523144283bf2924a1ee63751aee39aeed2d873e0785f021"
+  },
+  "prior_results_unchanged": true,
+  "tracked_tuning_learner_call_count": 754,
+  "partial_cost_diagnostics_from_last_checkpoint": {
+    "threshold_records_completed": 22,
+    "structural_candidates_touched": 16,
+    "unique_lambda_budget_trials": 497,
+    "confirmed_unique_lambda_budget_seed_evaluations": 744,
+    "semantic_cache_hits": 184,
+    "upward_expansion_trial_count": 425,
+    "relative_refinement_trial_count": 56,
+    "average_unique_budget_trials_per_structural_candidate": 31.0625,
+    "median_unique_budget_trials_per_structural_candidate": 33.0,
+    "max_unique_budget_trials_for_any_structural_candidate": 33,
+    "largest_completed_tested_budget": 317827579904,
+    "structural_candidates_with_threshold_at_any_fidelity": 6,
+    "structural_candidates_stopped_only_by_safety_limit": 10,
+    "confirmed_cached_seed_evaluations_with_grouping_allocated_zero": 744,
+    "confirmed_cached_seed_evaluations_with_grouping_realized_zero": 744,
+    "all_confirmed_operational_errors_finite": true,
+    "note": "Lower-bound partial work only; the benchmark failed before terminal metadata."
+  },
+  "projected_full_256_cost": {
+    "method": "lower bound from incomplete benchmark runtime and confirmed checkpoint work, scaled by 16",
+    "scale_factor": 16.0,
+    "projected_learner_evaluations_lower_bound": 11904,
+    "projected_unique_budget_trials_lower_bound": 7952,
+    "projected_wall_clock_seconds_lower_bound": 10530.263506673277,
+    "precision_note": "Not a completed-benchmark estimate; failure makes the actual projection unavailable."
+  },
+  "benchmark_health": {
+    "healthy": false,
+    "metadata_internally_valid_before_failure": true,
+    "production_runtime_error": true,
+    "runaway_or_infinite_loop_observed": false,
+    "decision": "full_run_skipped_due_to_benchmark_problem",
+    "reason": "OverflowError in NumPy multinomial during adaptive upward expansion."
+  },
+  "holdout": {
+    "status": "not_evaluated",
+    "evaluation": null,
+    "learner_seed_calls": [],
+    "confirmed_from_checkpoint_seed_intersection": true
+  }
+}

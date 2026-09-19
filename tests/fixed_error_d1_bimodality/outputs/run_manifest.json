@@ -1,0 +1,740 @@
+{
+  "budget_ratios": [
+    0.8,
+    1.0,
+    1.25,
+    1.5,
+    2.0
+  ],
+  "d1_budgets": [
+    410366,
+    512957,
+    641196,
+    769436,
+    1025914
+  ],
+  "d1_configuration": {
+    "budget_refinement": {
+      "enabled": true,
+      "steps": 16,
+      "tolerance": 1
+    },
+    "checkpoint_path": "/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/tests/fixed_error_6q_validation/d1/checkpoint.json",
+    "copy_ceiling": 10000000,
+    "d": 1,
+    "effective_error_threshold": 0.05,
+    "encoder_sampling": "nonuniform_h_s_cnot_random_walk",
+    "encoder_steps": 30,
+    "error_target": 0.05,
+    "exact_hidden_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ],
+    "holdout_seeds": [
+      6220001,
+      6220002,
+      6220003,
+      6220004
+    ],
+    "mode": "fixed_error_min_copies",
+    "n": 6,
+    "partition_block_sizes": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "preflight_learner_seed": 6209001,
+    "progressive_search": {
+      "candidate_growth_factor": 2,
+      "checkpoint_every_n_new_evaluations": 16,
+      "comparison_seed_count": 16,
+      "improvement_patience": 2,
+      "initial_candidates": 16,
+      "max_candidates": 256,
+      "min_rounds": 3,
+      "relative_improvement_threshold": 0.0,
+      "retention_fraction": 0.5,
+      "seed_fidelities": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    "search_seed": 6200501,
+    "search_space": {
+      "alpha_peel": [
+        0.002,
+        0.12
+      ],
+      "alpha_rank": [
+        0.005,
+        0.25
+      ],
+      "alpha_sgn": [
+        0.0001,
+        0.03
+      ],
+      "c_peel": [
+        1.02,
+        2.0
+      ],
+      "c_rank": [
+        1.02,
+        2.0
+      ],
+      "epsilon_tom": [
+        0.35,
+        1.8
+      ],
+      "eta_test": [
+        0.02,
+        0.3
+      ],
+      "grouping_weight": [
+        0.2,
+        5.0
+      ],
+      "h_max": [
+        0.6,
+        0.99
+      ],
+      "h_min": [
+        0.55,
+        0.95
+      ],
+      "h_span": [
+        0.02,
+        0.3
+      ],
+      "kappa_ratio": [
+        0.35,
+        1.5
+      ],
+      "peel_weight": [
+        0.2,
+        5.0
+      ],
+      "recovery_weight": [
+        0.2,
+        5.0
+      ],
+      "syndrome_weight": [
+        0.05,
+        2.0
+      ],
+      "theta": [
+        0.03,
+        0.5
+      ],
+      "theta_tau_multiplier": [
+        1.5,
+        128.0
+      ],
+      "tomography_weight": [
+        0.2,
+        5.0
+      ]
+    },
+    "simulation_backend": "batched_counts",
+    "state_generation": "Hilbert-Schmidt mixed latent blocks",
+    "state_generation_seed": 6201001,
+    "state_seed_ledger": {
+      "clifford_seed": 9971346628464947877,
+      "latent_state_seed": 5337268462070845693,
+      "master_seed": 6201001,
+      "partition_seed": 1197665283158166311
+    },
+    "tuning_seeds": [
+      6210001,
+      6210002,
+      6210003,
+      6210004,
+      6210005,
+      6210006,
+      6210007,
+      6210008,
+      6210009,
+      6210010,
+      6210011,
+      6210012,
+      6210013,
+      6210014,
+      6210015,
+      6210016
+    ]
+  },
+  "d1_frozen_candidate": {
+    "N_candidate": 512957,
+    "eta_test": 0.13643292046682307,
+    "grouping_weight": 0.21901097831686384,
+    "h_max": 0.7680727600880133,
+    "h_min": 0.7378720646824204,
+    "peel_weight": 0.6234280742479141,
+    "recovery_weight": 2.554654140116084,
+    "syndrome_weight": 0.43464049758637185,
+    "theta_tau_multiplier": 3.2111407512364325,
+    "tomography_weight": 1.1436798562190684
+  },
+  "d1_frozen_derived_candidate": {
+    "M1": 33616,
+    "M2": 137754,
+    "M_sgn": null,
+    "delta_grp_ordinary": 0.1,
+    "epsilon_tom": 1.0,
+    "eta_peel": 0.006040139081118579,
+    "eta_test": 0.13643292046682307,
+    "execution_policy": "fixed_budget_graceful",
+    "fixed_budget_parameterization_schema": 5,
+    "fixed_budget_stage_caps": [
+      [
+        "peeling",
+        67233
+      ],
+      [
+        "recovery",
+        275508
+      ],
+      [
+        "grouping",
+        0
+      ],
+      [
+        "syndrome",
+        46874
+      ],
+      [
+        "tomography",
+        123342
+      ]
+    ],
+    "h_max": 0.7680727600880133,
+    "h_min": 0.7378720646824204,
+    "normalized_stage_weights": [
+      [
+        "peeling",
+        0.131071343376187
+      ],
+      [
+        "recovery",
+        0.5370979650066237
+      ],
+      [
+        "grouping",
+        0.0
+      ],
+      [
+        "syndrome",
+        0.09138009059515935
+      ],
+      [
+        "tomography",
+        0.24045060102203
+      ]
+    ],
+    "parameters": {
+      "N_candidate": 512957,
+      "eta_test": 0.13643292046682307,
+      "grouping_weight": 0.21901097831686384,
+      "h_max": 0.7680727600880133,
+      "h_min": 0.7378720646824204,
+      "peel_weight": 0.6234280742479141,
+      "recovery_weight": 2.554654140116084,
+      "syndrome_weight": 0.43464049758637185,
+      "theta_tau_multiplier": 3.2111407512364325,
+      "tomography_weight": 1.1436798562190684
+    },
+    "peeling_physical_copies": 67232,
+    "physical_copy_budget": 512957,
+    "recovery_physical_copies": 275508,
+    "tau1": 0.026727160801591272,
+    "tau_kappa": 0.05,
+    "tau_rank": 0.01320303379349489,
+    "theta": 0.04239679985424319,
+    "theta_over_tau_rank": 3.2111407512364325,
+    "theta_tau_multiplier": 3.2111407512364325,
+    "worst_case_sign_reservation": 0,
+    "zeta_peel": 0.05,
+    "zeta_rank": 0.05,
+    "zeta_sgn": 0.05,
+    "zeta_tom": 0.1
+  },
+  "d1_replay_seed_policy": {
+    "count": 128,
+    "seeds": [
+      6230001,
+      6230002,
+      6230003,
+      6230004,
+      6230005,
+      6230006,
+      6230007,
+      6230008,
+      6230009,
+      6230010,
+      6230011,
+      6230012,
+      6230013,
+      6230014,
+      6230015,
+      6230016,
+      6230017,
+      6230018,
+      6230019,
+      6230020,
+      6230021,
+      6230022,
+      6230023,
+      6230024,
+      6230025,
+      6230026,
+      6230027,
+      6230028,
+      6230029,
+      6230030,
+      6230031,
+      6230032,
+      6230033,
+      6230034,
+      6230035,
+      6230036,
+      6230037,
+      6230038,
+      6230039,
+      6230040,
+      6230041,
+      6230042,
+      6230043,
+      6230044,
+      6230045,
+      6230046,
+      6230047,
+      6230048,
+      6230049,
+      6230050,
+      6230051,
+      6230052,
+      6230053,
+      6230054,
+      6230055,
+      6230056,
+      6230057,
+      6230058,
+      6230059,
+      6230060,
+      6230061,
+      6230062,
+      6230063,
+      6230064,
+      6230065,
+      6230066,
+      6230067,
+      6230068,
+      6230069,
+      6230070,
+      6230071,
+      6230072,
+      6230073,
+      6230074,
+      6230075,
+      6230076,
+      6230077,
+      6230078,
+      6230079,
+      6230080,
+      6230081,
+      6230082,
+      6230083,
+      6230084,
+      6230085,
+      6230086,
+      6230087,
+      6230088,
+      6230089,
+      6230090,
+      6230091,
+      6230092,
+      6230093,
+      6230094,
+      6230095,
+      6230096,
+      6230097,
+      6230098,
+      6230099,
+      6230100,
+      6230101,
+      6230102,
+      6230103,
+      6230104,
+      6230105,
+      6230106,
+      6230107,
+      6230108,
+      6230109,
+      6230110,
+      6230111,
+      6230112,
+      6230113,
+      6230114,
+      6230115,
+      6230116,
+      6230117,
+      6230118,
+      6230119,
+      6230120,
+      6230121,
+      6230122,
+      6230123,
+      6230124,
+      6230125,
+      6230126,
+      6230127,
+      6230128
+    ],
+    "start": 6230001
+  },
+  "d2_configuration": {
+    "budget_refinement": {
+      "enabled": true,
+      "steps": 16,
+      "tolerance": 1
+    },
+    "checkpoint_path": "/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/tests/fixed_error_6q_validation/d2/checkpoint.json",
+    "copy_ceiling": 10000000,
+    "d": 2,
+    "effective_error_threshold": 0.05,
+    "encoder_sampling": "nonuniform_h_s_cnot_random_walk",
+    "encoder_steps": 30,
+    "error_target": 0.05,
+    "exact_hidden_partition": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "holdout_seeds": [
+      6220001,
+      6220002,
+      6220003,
+      6220004
+    ],
+    "mode": "fixed_error_min_copies",
+    "n": 6,
+    "partition_block_sizes": [
+      2,
+      2,
+      2
+    ],
+    "preflight_learner_seed": 6209001,
+    "progressive_search": {
+      "candidate_growth_factor": 2,
+      "checkpoint_every_n_new_evaluations": 16,
+      "comparison_seed_count": 16,
+      "improvement_patience": 2,
+      "initial_candidates": 16,
+      "max_candidates": 256,
+      "min_rounds": 3,
+      "relative_improvement_threshold": 0.0,
+      "retention_fraction": 0.5,
+      "seed_fidelities": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    "search_seed": 6200501,
+    "search_space": {
+      "alpha_peel": [
+        0.002,
+        0.12
+      ],
+      "alpha_rank": [
+        0.005,
+        0.25
+      ],
+      "alpha_sgn": [
+        0.0001,
+        0.03
+      ],
+      "c_peel": [
+        1.02,
+        2.0
+      ],
+      "c_rank": [
+        1.02,
+        2.0
+      ],
+      "epsilon_tom": [
+        0.35,
+        1.8
+      ],
+      "eta_test": [
+        0.02,
+        0.3
+      ],
+      "grouping_weight": [
+        0.2,
+        5.0
+      ],
+      "h_max": [
+        0.6,
+        0.99
+      ],
+      "h_min": [
+        0.55,
+        0.95
+      ],
+      "h_span": [
+        0.02,
+        0.3
+      ],
+      "kappa_ratio": [
+        0.35,
+        1.5
+      ],
+      "peel_weight": [
+        0.2,
+        5.0
+      ],
+      "recovery_weight": [
+        0.2,
+        5.0
+      ],
+      "syndrome_weight": [
+        0.05,
+        2.0
+      ],
+      "theta": [
+        0.03,
+        0.5
+      ],
+      "theta_tau_multiplier": [
+        1.5,
+        128.0
+      ],
+      "tomography_weight": [
+        0.2,
+        5.0
+      ]
+    },
+    "simulation_backend": "batched_counts",
+    "state_generation": "Hilbert-Schmidt mixed latent blocks",
+    "state_generation_seed": 6202001,
+    "state_seed_ledger": {
+      "clifford_seed": 9683102538553070818,
+      "latent_state_seed": 594843407768799016,
+      "master_seed": 6202001,
+      "partition_seed": 10261749783410256431
+    },
+    "tuning_seeds": [
+      6210001,
+      6210002,
+      6210003,
+      6210004,
+      6210005,
+      6210006,
+      6210007,
+      6210008,
+      6210009,
+      6210010,
+      6210011,
+      6210012,
+      6210013,
+      6210014,
+      6210015,
+      6210016
+    ]
+  },
+  "d2_control_seed_policy": {
+    "count": 32,
+    "seeds": [
+      6240001,
+      6240002,
+      6240003,
+      6240004,
+      6240005,
+      6240006,
+      6240007,
+      6240008,
+      6240009,
+      6240010,
+      6240011,
+      6240012,
+      6240013,
+      6240014,
+      6240015,
+      6240016,
+      6240017,
+      6240018,
+      6240019,
+      6240020,
+      6240021,
+      6240022,
+      6240023,
+      6240024,
+      6240025,
+      6240026,
+      6240027,
+      6240028,
+      6240029,
+      6240030,
+      6240031,
+      6240032
+    ],
+    "start": 6240001
+  },
+  "d2_frozen_candidate": {
+    "N_candidate": 904142,
+    "eta_test": 0.12519571473934665,
+    "grouping_weight": 0.47923551905547196,
+    "h_max": 0.964076996768804,
+    "h_min": 0.588465755181522,
+    "peel_weight": 0.8619402646056884,
+    "recovery_weight": 1.5000453327373384,
+    "syndrome_weight": 0.1076288335476081,
+    "theta_tau_multiplier": 2.98597266491764,
+    "tomography_weight": 0.2713768200977346
+  },
+  "d2_frozen_derived_candidate": {
+    "M1": 121003,
+    "M2": 210583,
+    "M_sgn": null,
+    "delta_grp_ordinary": 0.1,
+    "epsilon_tom": 1.0,
+    "eta_peel": 0.0751222483174564,
+    "eta_test": 0.12519571473934665,
+    "execution_policy": "fixed_budget_graceful",
+    "fixed_budget_parameterization_schema": 5,
+    "fixed_budget_stage_caps": [
+      [
+        "peeling",
+        242006
+      ],
+      [
+        "recovery",
+        421167
+      ],
+      [
+        "grouping",
+        134554
+      ],
+      [
+        "syndrome",
+        30218
+      ],
+      [
+        "tomography",
+        76197
+      ]
+    ],
+    "h_max": 0.964076996768804,
+    "h_min": 0.588465755181522,
+    "normalized_stage_weights": [
+      [
+        "peeling",
+        0.2676644615913039
+      ],
+      [
+        "recovery",
+        0.46581978222512455
+      ],
+      [
+        "grouping",
+        0.1488204257891277
+      ],
+      [
+        "syndrome",
+        0.03342274977303627
+      ],
+      [
+        "tomography",
+        0.0842725806214076
+      ]
+    ],
+    "parameters": {
+      "N_candidate": 904142,
+      "eta_test": 0.12519571473934665,
+      "grouping_weight": 0.47923551905547196,
+      "h_max": 0.964076996768804,
+      "h_min": 0.588465755181522,
+      "peel_weight": 0.8619402646056884,
+      "recovery_weight": 1.5000453327373384,
+      "syndrome_weight": 0.1076288335476081,
+      "theta_tau_multiplier": 2.98597266491764,
+      "tomography_weight": 0.2713768200977346
+    },
+    "peeling_physical_copies": 242006,
+    "physical_copy_budget": 904142,
+    "recovery_physical_copies": 421166,
+    "tau1": 0.014087300384110173,
+    "tau_kappa": 0.05,
+    "tau_rank": 0.010678596825711416,
+    "theta": 0.031885998221250565,
+    "theta_over_tau_rank": 2.9859726649176395,
+    "theta_tau_multiplier": 2.98597266491764,
+    "worst_case_sign_reservation": 0,
+    "zeta_peel": 0.05,
+    "zeta_rank": 0.05,
+    "zeta_sgn": 0.05,
+    "zeta_tom": 0.1
+  },
+  "elapsed_seconds": 280.1768922500778,
+  "production_files_unchanged": true,
+  "production_hashes_after": {
+    "Optimization/objective.py": "3eaf9434e688433f246204b4bae2572fe30c356a27c3b8a101ca8fa046202c41",
+    "Optimization/parameterization.py": "eca8088de7e6e57c67dea995410e324a2e1ffaf38dd4f03d5be68f02db7c68cf",
+    "Optimization/progressive_search.py": "5a732fd2d9bb3c622b4ac8e316805d35c8d6e0072a1f537bdeed4dc6cdd8a010",
+    "Optimization/search.py": "d460af9f1e8bf5f2e4151f8a7b8d130b34cd18a98654f085e11adda48591f058",
+    "Optimization/specification.py": "4ceea078cfd728fb38bcc7d1b0920805edca74643802351be8edf46ff201e97d",
+    "main_v2.py": "7ba33d062fb6bf0b1934d79ed6eff433f6cc6cc6bdf5cee371ec5e32ff684ce7"
+  },
+  "production_hashes_before": {
+    "Optimization/objective.py": "3eaf9434e688433f246204b4bae2572fe30c356a27c3b8a101ca8fa046202c41",
+    "Optimization/parameterization.py": "eca8088de7e6e57c67dea995410e324a2e1ffaf38dd4f03d5be68f02db7c68cf",
+    "Optimization/progressive_search.py": "5a732fd2d9bb3c622b4ac8e316805d35c8d6e0072a1f537bdeed4dc6cdd8a010",
+    "Optimization/search.py": "d460af9f1e8bf5f2e4151f8a7b8d130b34cd18a98654f085e11adda48591f058",
+    "Optimization/specification.py": "4ceea078cfd728fb38bcc7d1b0920805edca74643802351be8edf46ff201e97d",
+    "main_v2.py": "7ba33d062fb6bf0b1934d79ed6eff433f6cc6cc6bdf5cee371ec5e32ff684ce7"
+  },
+  "schema_version": 1,
+  "state_reproducibility": {
+    "frobenius_norm_difference": 0.0,
+    "max_absolute_difference": 0.0,
+    "numerically_allclose": true,
+    "regenerated_digest_sha256": "55d8fb691b195ab82ab46a20df485c71618c68b80071690bb38576df367c05ec",
+    "repeated_regenerated_digest_sha256": "55d8fb691b195ab82ab46a20df485c71618c68b80071690bb38576df367c05ec",
+    "saved_digest_sha256": "55d8fb691b195ab82ab46a20df485c71618c68b80071690bb38576df367c05ec",
+    "saved_state_comparison_note": "The saved result stores a digest, not a state matrix; the state was regenerated twice from the saved configuration and compared numerically.",
+    "saved_state_matrix_available": false
+  }
+}

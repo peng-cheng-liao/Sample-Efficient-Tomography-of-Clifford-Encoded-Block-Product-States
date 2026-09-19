@@ -1,0 +1,253 @@
+JOB 09 d=2/d=3 CROSS-PLATFORM REGENERATION REPAIR REPORT
+Date: 2026-09-01
+Final verdict: D2_D3_SUBMITTED
+
+1. ROOT-CAUSE DIAGNOSIS
+
+The authoritative local frozen targets and their deployed Discovery copies were
+already byte-identical. The failure was confined to an over-strict validation
+step that regenerated Hilbert-Schmidt mixed latent blocks on Discovery and
+required the resulting JSON documents and raw floating-point hashes to be
+byte-identical to the locally frozen versions.
+
+The same seeded Ginibre construction produces platform-level floating-point
+differences at approximately 3e-17. Those differences change SHA-256 hashes
+but do not change the discrete target identity or the physical state. This was
+confirmed before patching; no seed, partition, Clifford, tableau, or generation
+metadata mismatch was found.
+
+2. REPRESENTATIVE DIAGNOSTICS BEFORE PATCHING
+
+d2 n02/state00, local frozen reference versus local regeneration:
+- exact latent bytes: yes
+- maximum absolute, Frobenius, trace-norm, trace, and eigenvalue differences: 0
+- canonical SHA-256: 9f2cc1ce23178a43e47247d5462f0ca5f5fca48061a79ff147a03403e586134e
+- legacy raw SHA-256: ac74b7b7239093842f79aea7a2180a8b256fdf8df8125bfe8f999d221a3c65bd
+
+d2 n02/state00, local frozen reference versus Discovery regeneration:
+- exact latent bytes: no
+- maximum absolute difference: 2.778258008052119e-17
+- Frobenius difference: 5.3448938632411856e-17
+- trace-norm difference: 8.988472089383842e-17
+- absolute trace difference: 2.7755575615628914e-17
+- Hermiticity residual, regenerated/reference: 0 / 4.3240360945575536e-17
+- minimum-eigenvalue difference: 1.3877787807814457e-17
+- Discovery legacy raw SHA-256: 377e93cec837c45c4efc5d4dee0f45e6b231ab0055a71ec98b8eb221d1e6be43
+
+d3 n03/state00, local frozen reference versus local regeneration:
+- exact latent bytes: yes
+- maximum absolute, Frobenius, trace-norm, trace, and eigenvalue differences: 0
+- canonical SHA-256: e12b64d77edf14329f27936579b8299a9282ca683eb7279fcf0c8c1788189b6b
+- legacy raw SHA-256: 3d055449cc8e052b6503d151f04f5a002c16f9a6dc3bde24a91f5ad02ef9cb3a
+
+d3 n03/state00, local frozen reference versus Discovery regeneration:
+- exact latent bytes: no
+- maximum absolute difference: 2.775573794190864e-17
+- Frobenius difference: 4.2965604818039206e-17
+- trace-norm difference: 9.350373826652986e-17
+- absolute trace difference: 2.7755575615628914e-17
+- Hermiticity residual, regenerated/reference: 3.3545564503372014e-17 / 3.18251022682199e-17
+- minimum-eigenvalue difference: 3.686287386450715e-18
+- Discovery legacy raw SHA-256: d943d839e00ba20be50ca9da378bf366b6adc7155640b511fdb45ef2542b2997
+
+For both representatives, d, n, state_index, block_sizes, every target seed,
+Clifford gate sequence, Clifford tableau, encoder sampling/step metadata, and
+latent-state generation source matched exactly.
+
+Discrete diagnostic hashes:
+- d2 gate sequence: 195ee526e4c3bb0b7f9ea1f5ce373d9754afaf59a94e93cf2726c6e80e609560
+- d2 tableau: ccd8cd8c893ec1676b4159860f09fa4d3e1493a9655149ed961f34ce2f37c303
+- d3 gate sequence: c13641f8993408bf46368c23c10dad00f5d98b41e73fdade29a15e74d43276c7
+- d3 tableau: 8bb629d1e8bcffa7bef304e73038b6dfef7e5e06406a195de7d6b9e48ece261b
+
+3. FILES CHANGED
+
+Only the validation/test support layer changed:
+- Jobs/09/d2/freeze_targets.py
+- Jobs/09/d2/preflight.py
+- Jobs/09/d2/test_official_study.py
+- Jobs/09/d3/freeze_targets.py
+- Jobs/09/d3/preflight.py
+- Jobs/09/d3/test_official_study.py
+
+No production scientific runtime, runner, config, frozen-target manifest, task
+manifest, study specification, result, checkpoint, or log was modified locally.
+
+4. VALIDATION LOGIC CHANGE
+
+Exact file/deployment integrity remains strict:
+- existing config SHA-256 validation remains strict
+- authoritative configs, manifests, specifications, provenance, and runtime
+  source bytes remain exact
+- a regression test proves that appending one byte to a copied frozen config
+  causes the SHA-256 gate to fail
+
+Reference-aware cross-platform scientific regeneration now requires:
+- exact d/n/state_index/block_sizes and complete target seed ledger
+- exact generated hidden partition, encoder mode/steps, and generation source
+- exact latent block count and shapes
+- every latent entry within 5e-15 of its authoritative reference
+- the existing Job 09 2^-48 canonical quantization policy
+- a canonical digest from the exact regenerated discrete Clifford/tableau/
+  partition/seed identity and authoritative latent reference matrices that
+  matches the stored fingerprint
+
+Regenerated validation documents reuse authoritative legacy raw hashes and
+latent reference bytes only after all scientific-equivalence checks pass. The
+repair does not accept Discovery-generated raw hashes as new references.
+
+5. TOLERANCE AND CANONICALIZATION
+
+- latent absolute tolerance: 5.0e-15
+- canonical binary quantization: 2^-48
+- algorithm identity: jobs09-canonical-target-v1
+
+6. LOCAL REGRESSION TESTS
+
+- d2: 11/11 PASS
+- d3: 11/11 PASS
+- exact discrete match with 1e-15 perturbation: PASS
+- 5e-15 boundary: PASS
+- above-tolerance and 1e-6 perturbations: correctly rejected
+- wrong seed, partition, Clifford sequence, and tableau: correctly rejected
+- changed config bytes: strict SHA correctly rejected
+- reference-aware canonical equivalence: PASS
+- full regenerated authoritative documents remain byte-identical: PASS
+- freeze_targets.py --check: PASS for 160 d2 and 140 d3 targets
+
+7. LOCAL FULL PREFLIGHT AND SELF-CONTAINMENT
+
+d2:
+- n=02 through n=09: 20 targets each PASS
+- preflight=PASS targets=160 failed=0 smoke=PASS
+- self_containment=PASS; runtime_sources=11; tamper_rejected=true
+
+d3:
+- n=03 through n=09: 20 targets each PASS
+- preflight=PASS targets=140 failed=0 smoke=PASS
+- self_containment=PASS; runtime_sources=11; tamper_rejected=true
+
+8. SCIENTIFIC IMMUTABILITY
+
+A before/after SHA-256 snapshot covered 419 protected files: all 300 configs,
+both frozen-target manifests, both task manifests, both study specifications,
+all d2/d3 packaged scientific runtime sources, the official d1 root files,
+test1, test2, and audit. The full snapshot was identical: PASS.
+
+All original config hashes, seeds, partitions, target fingerprints, checkpoint
+identities, and scientific settings remain unchanged.
+
+9. DISCOVERY AUDIT AND SYNC
+
+HPC root: /home1/liaopeng/TomographyCliffordEncodedStates/09
+
+Shared environment:
+- Python 3.10.16
+- NumPy 1.23.5
+- SciPy 1.10.1
+- QuTiP 5.2.1
+- Numba not installed
+
+The dry run listed exactly the six changed files. The real sync was
+non-destructive and used no --delete. Local/Discovery SHA-256 values match for
+all six. Checksum dry runs emitted no differences for all 300 configs and the
+frozen manifests/specifications/provenance files.
+
+10. DISCOVERY REPRESENTATIVE DIAGNOSTIC AFTER SYNC
+
+d2 n02/state00:
+- reference-aware regeneration and frozen config SHA: PASS
+- max latent / Frobenius difference: 2.778258008052119e-17 / 5.3448938632411856e-17
+- encoded-state trace distance: 1.4988322356582705e-16
+- encoded-state fidelity: 1.0000000000000002
+- canonical fingerprint matched
+
+d3 n03/state00:
+- reference-aware regeneration and frozen config SHA: PASS
+- max latent / Frobenius difference: 2.775573794190864e-17 / 4.2965604818039206e-17
+- encoded-state trace distance: 4.7890910332798916e-17
+- encoded-state fidelity: 0.999999999999996
+- canonical fingerprint matched
+
+11. DISCOVERY SELF-CONTAINMENT / PROVENANCE
+
+- d2: PASS; copied_only=Jobs/09/d2; runtime_sources=11; targets=160;
+  smoke_passed=1; smoke_failed=0; tamper_rejected=true
+- d3: PASS; copied_only=Jobs/09/d3; runtime_sources=11; targets=140;
+  smoke_passed=1; smoke_failed=0; tamper_rejected=true
+- production imports remained confined to each study-local runtime
+
+12. DISCOVERY FULL PREFLIGHTS
+
+- d2 n=02..09: 20 targets each PASS;
+  preflight=PASS targets=160 failed=0 smoke=PASS
+- d3 n=03..09: 20 targets each PASS;
+  preflight=PASS targets=140 failed=0 smoke=PASS
+
+13. OPTIONAL NONZERO-GROUPING MICROCHECK
+
+The standard deterministic smoke checks passed the generic d>=2 branch,
+allocated 1454 grouping copies, and executed a grouping stage record. Realized
+grouping copies were zero for the representative smoke path. A separate
+temporary target forcing nonzero grouping was skipped because it was not
+straightforward without broadening the validated test surface. Per the
+runbook, this optional check did not block submission.
+
+14. SLURM VALIDATION AND SUBMISSION
+
+Both scripts passed bash -n and exact contract checks.
+
+d2:
+- job name: cebp09_d2_scaling
+- array: 0-159%20
+- JobID: 11602469
+- submitted: 2026-09-01T19:03:55Z
+
+d3:
+- job name: cebp09_d3_scaling
+- array: 0-139%20
+- JobID: 11602470
+- submitted: 2026-09-01T19:03:55Z
+
+Shared resources: nodes=1, ntasks=1, cpus-per-task=1, memory=16G,
+walltime=48:00:00, partition=epyc-64, account=qzhuang_922, requeue enabled,
+and no unhandled TERM signal directive. The immediate squeue/sacct duplicate
+check was clear.
+
+15. BOUNDED MONITORING
+
+Monitoring stopped at 2026-09-01T19:06:54Z, under the five-minute cap.
+
+d2 JobID 11602469:
+- RUNNING=2, PENDING=158, COMPLETED=0, FAILED=0
+- pending reason: Priority
+- running nodes: b10-05 and b10-15
+
+d3 JobID 11602470:
+- RUNNING=0, PENDING=140, COMPLETED=0, FAILED=0
+- pending reason: Priority
+
+First available d2 task evidence:
+- task_id=0, d=2, n=2, state_index=0
+- target fingerprint: 9f2cc1ce23178a43e47247d5462f0ca5f5fca48061a79ff147a03403e586134e
+- config: configs/n02/state00.json
+- checkpoint: checkpoints/n02/state00_checkpoint.json
+- result: results/n02/state00_result.json
+- status: running; checkpoint mode: new
+- environment log confirms the validated package versions
+- no import, fingerprint, checkpoint, permission, or path error found
+
+d3 had not started during the bounded window, so no d3 task log was available.
+No job was auto-resubmitted.
+
+16. PRESERVATION / NON-DESTRUCTIVE GUARANTEES
+
+- official d1, test1, test2, and audit preserved; root pilot integrity PASS
+- shared .venv preserved and not modified
+- all 300 official d2/d3 frozen configs preserved byte-for-byte
+- no target, seed, partition, manifest identity, or scientific setting changed
+- no result, checkpoint, or log deleted
+- no file deleted; no rsync --delete; no rm or rm -rf
+- no job cancelled or resubmitted
+
+FINAL VERDICT: D2_D3_SUBMITTED

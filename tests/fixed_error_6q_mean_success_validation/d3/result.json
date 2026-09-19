@@ -1,0 +1,1952 @@
+{
+  "schema_version": 1,
+  "status": "completed_infeasible",
+  "configuration": {
+    "n": 6,
+    "d": 3,
+    "partition_block_sizes": [
+      3,
+      3
+    ],
+    "exact_hidden_partition": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        3,
+        4,
+        5
+      ]
+    ],
+    "mode": "fixed_error_min_copies",
+    "error_target": 0.05,
+    "effective_error_threshold": 0.05,
+    "copy_ceiling": 10000000,
+    "success_probability_threshold": 0.85,
+    "final_tuning_seed_count": 16,
+    "required_error_success_count": 14,
+    "state_generation_seed": 6203001,
+    "state_seed_ledger": {
+      "master_seed": 6203001,
+      "partition_seed": 8399274222869137212,
+      "latent_state_seed": 13907204193922997408,
+      "clifford_seed": 7046527449906284360
+    },
+    "state_generation": "Hilbert-Schmidt mixed latent blocks",
+    "encoder_sampling": "nonuniform_h_s_cnot_random_walk",
+    "encoder_steps": 30,
+    "search_seed": 6200501,
+    "preflight_learner_seed": 6209001,
+    "tuning_seeds": [
+      6210001,
+      6210002,
+      6210003,
+      6210004,
+      6210005,
+      6210006,
+      6210007,
+      6210008,
+      6210009,
+      6210010,
+      6210011,
+      6210012,
+      6210013,
+      6210014,
+      6210015,
+      6210016
+    ],
+    "historical_holdout_seeds_accepted_but_unused": [
+      6220001,
+      6220002,
+      6220003,
+      6220004
+    ],
+    "simulation_backend": "batched_counts",
+    "search_space": {
+      "alpha_peel": [
+        0.002,
+        0.12
+      ],
+      "alpha_rank": [
+        0.005,
+        0.25
+      ],
+      "alpha_sgn": [
+        0.0001,
+        0.03
+      ],
+      "c_peel": [
+        1.02,
+        2.0
+      ],
+      "c_rank": [
+        1.02,
+        2.0
+      ],
+      "h_min": [
+        0.55,
+        0.95
+      ],
+      "h_span": [
+        0.02,
+        0.3
+      ],
+      "h_max": [
+        0.6,
+        0.99
+      ],
+      "theta": [
+        0.03,
+        0.5
+      ],
+      "theta_tau_multiplier": [
+        1.5,
+        128.0
+      ],
+      "eta_test": [
+        0.02,
+        0.3
+      ],
+      "kappa_ratio": [
+        0.35,
+        1.5
+      ],
+      "epsilon_tom": [
+        0.35,
+        1.8
+      ],
+      "peel_weight": [
+        0.2,
+        5.0
+      ],
+      "recovery_weight": [
+        0.2,
+        5.0
+      ],
+      "grouping_weight": [
+        0.2,
+        5.0
+      ],
+      "syndrome_weight": [
+        0.05,
+        2.0
+      ],
+      "tomography_weight": [
+        0.2,
+        5.0
+      ]
+    },
+    "progressive_search": {
+      "initial_candidates": 16,
+      "max_candidates": 256,
+      "candidate_growth_factor": 2,
+      "seed_fidelities": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "comparison_seed_count": 16,
+      "relative_improvement_threshold": 0.0,
+      "improvement_patience": 2,
+      "min_rounds": 3,
+      "retention_fraction": 0.5,
+      "checkpoint_every_n_new_evaluations": 16
+    },
+    "budget_refinement": {
+      "enabled": true,
+      "steps": 16,
+      "tolerance": 1
+    },
+    "checkpoint_path": "/Users/liaopengcheng_mac/Library/Mobile Documents/com~apple~CloudDocs/Code/Tomography_Clifford_Encoded_States/tests/fixed_error_6q_mean_success_validation/d3/checkpoint.json"
+  },
+  "prior_result_path": "tests/fixed_error_6q_validation/d3/result.json",
+  "prior_result_sha256_before": "0c565af1bc2b24497b7ed737cc48d2f76a16c31e19827e57031fe6a31e1b2e3f",
+  "prior_mean_only": {
+    "rule": "mean_only",
+    "N_candidate": 6499430,
+    "mean_trace_distance": 0.04992589035363536,
+    "max_trace_distance": 0.05577885795978229,
+    "error_success_count_recovered": 9,
+    "error_success_fraction_recovered": 0.5625,
+    "per_seed_trace_distances": [
+      0.049534095352678,
+      0.04915783317888431,
+      0.04833746278384557,
+      0.05264125140833183,
+      0.04808362938077725,
+      0.04981404875195766,
+      0.048516690733156224,
+      0.05141659518041876,
+      0.05577885795978229,
+      0.05030578039639909,
+      0.04600397584730949,
+      0.049164591022569634,
+      0.051496902216880636,
+      0.052152856911778074,
+      0.044537682067680634,
+      0.05187199246571625
+    ]
+  },
+  "state_digest_sha256": "f6d4067643644b2e5c4ae74a9a1061235331d6edc96e826af14ab8e440b4b3d3",
+  "production_hashes_before": {
+    "main_v2.py": "7ba33d062fb6bf0b1934d79ed6eff433f6cc6cc6bdf5cee371ec5e32ff684ce7",
+    "Optimization/objective.py": "ec4e15fce322c34cd1d9beb4037e2cee22913b675ccb093f4a16e268eff7f627",
+    "Optimization/parameterization.py": "b82cfff555d31143e0d0320fdc210afe77476deb0571b1ab4c48574e26393a29",
+    "Optimization/progressive_search.py": "ae064138a1dbc0420f1bb0bc456310d9983731ae776ea5e925bf6cb88a05c844",
+    "Optimization/search.py": "d0ab660f6d9bd43ac24046866edaeaa927431d427a242b3247577c0212513754",
+    "Optimization/specification.py": "db21beb782347b896d353450b7e633f33d7f2ac01637fa2d9103f5fbd2118a4b"
+  },
+  "all_prior_result_hashes_before": {
+    "tests/fixed_error_6q_validation/d1/result.json": "f896a0d80b6721484ff6f332a71b04fdacb537f219a41520f621182c38151d64",
+    "tests/fixed_error_6q_validation/d2/result.json": "0f0f4cec254b42a25d980411e89b3daafc301e4cd2ed31354ed22b3552d5a8da",
+    "tests/fixed_error_6q_validation/d3/result.json": "0c565af1bc2b24497b7ed737cc48d2f76a16c31e19827e57031fe6a31e1b2e3f"
+  },
+  "preflight": {
+    "status": "passed",
+    "wall_clock_seconds": 3.7287800409831107,
+    "deterministic_state_regeneration": true,
+    "repeated_state_digest_sha256": "f6d4067643644b2e5c4ae74a9a1061235331d6edc96e826af14ab8e440b4b3d3",
+    "repeated_state_max_abs_difference": 3.469446951953614e-18,
+    "candidate": {
+      "N_candidate": 1000000,
+      "h_min": 0.75,
+      "h_max": 0.92,
+      "theta_tau_multiplier": 8.0,
+      "eta_test": 0.1,
+      "peel_weight": 1.0,
+      "recovery_weight": 1.0,
+      "grouping_weight": 1.0,
+      "syndrome_weight": 0.25,
+      "tomography_weight": 2.0
+    },
+    "candidate_budget": 1000000,
+    "seed_evaluation": {
+      "learner_seed": 6209001,
+      "execution_branch": "generic_d_ge_2",
+      "operational_success": true,
+      "estimator_available": true,
+      "budget_feasible": true,
+      "trace_distance": 0.571855804919783,
+      "error_feasible_diagnostic": false,
+      "realized_total": 761905,
+      "copy_utilization": 0.761905,
+      "realized_copy_ledger": {
+        "peeling_bell_pool": 190476,
+        "recovery_bell_pool": 190476,
+        "grouping_ordinary_pool": 0,
+        "syndrome_sign_pool": 0,
+        "block_tomography_pool": 380953
+      },
+      "fixed_budget_stage_records": {
+        "peeling": {
+          "assigned_cap": 190476,
+          "realized_copies": 190476,
+          "unused_copies": 0,
+          "budget_exhausted": true,
+          "stage_complete": true,
+          "degradation_reason": null
+        },
+        "recovery": {
+          "assigned_cap": 190476,
+          "realized_copies": 190476,
+          "unused_copies": 0,
+          "budget_exhausted": true,
+          "stage_complete": true,
+          "degradation_reason": null
+        },
+        "grouping": {
+          "assigned_cap": 190476,
+          "realized_copies": 0,
+          "unused_copies": 190476,
+          "budget_exhausted": false,
+          "stage_complete": true,
+          "degradation_reason": null
+        },
+        "syndrome": {
+          "assigned_cap": 47619,
+          "realized_copies": 0,
+          "unused_copies": 47619,
+          "budget_exhausted": false,
+          "stage_complete": true,
+          "degradation_reason": null
+        },
+        "tomography": {
+          "assigned_cap": 380953,
+          "realized_copies": 380953,
+          "unused_copies": 0,
+          "budget_exhausted": true,
+          "stage_complete": true,
+          "degradation_reason": null
+        }
+      },
+      "tomography_realized_copies": 380953,
+      "failure_stage": null,
+      "failure_reason": null,
+      "preflight_rejected": false
+    },
+    "exception_type": null,
+    "exception_message": null,
+    "traceback": null
+  },
+  "optimization": {
+    "termination_reason": "max_candidates",
+    "candidate_pool_sizes_reached": [
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "final_candidate_pool_size": 256,
+    "reached_256_candidates": true,
+    "rounds_completed": 5,
+    "final_comparison_seed_count": 16,
+    "best_candidate_id": "candidate-0162",
+    "best_candidate_resolvable_in_catalog": true,
+    "best_candidate": {
+      "N_candidate": 7080465,
+      "h_min": 0.6390347941961005,
+      "h_max": 0.7918287977471141,
+      "theta_tau_multiplier": 2.682003101752404,
+      "eta_test": 0.1532334039273556,
+      "peel_weight": 2.2847867496041294,
+      "recovery_weight": 3.178883204254805,
+      "grouping_weight": 0.3013889275594272,
+      "syndrome_weight": 0.36465314412949645,
+      "tomography_weight": 0.7853018516959501
+    },
+    "best_derived_candidate": {
+      "parameters": {
+        "N_candidate": 7080465,
+        "h_min": 0.6390347941961005,
+        "h_max": 0.7918287977471141,
+        "theta_tau_multiplier": 2.682003101752404,
+        "eta_test": 0.1532334039273556,
+        "peel_weight": 2.2847867496041294,
+        "recovery_weight": 3.178883204254805,
+        "grouping_weight": 0.3013889275594272,
+        "syndrome_weight": 0.36465314412949645,
+        "tomography_weight": 0.7853018516959501
+      },
+      "M1": 1169726,
+      "tau1": 0.004530892648454769,
+      "zeta_peel": 0.05,
+      "h_min": 0.6390347941961005,
+      "h_max": 0.7918287977471141,
+      "eta_peel": 0.030558800710202717,
+      "M2": 1627471,
+      "tau_rank": 0.003841220295086958,
+      "zeta_rank": 0.05,
+      "theta": 0.010302164745937507,
+      "theta_tau_multiplier": 2.682003101752404,
+      "theta_over_tau_rank": 2.682003101752404,
+      "eta_test": 0.1532334039273556,
+      "tau_kappa": 0.05,
+      "delta_grp_ordinary": 0.1,
+      "M_sgn": null,
+      "zeta_sgn": 0.05,
+      "epsilon_tom": 1.0,
+      "zeta_tom": 0.1,
+      "peeling_physical_copies": 2339452,
+      "recovery_physical_copies": 3254942,
+      "worst_case_sign_reservation": 0,
+      "execution_policy": "fixed_budget_graceful",
+      "fixed_budget_parameterization_schema": 5,
+      "fixed_budget_stage_caps": [
+        [
+          "peeling",
+          2339453
+        ],
+        [
+          "recovery",
+          3254942
+        ],
+        [
+          "grouping",
+          308600
+        ],
+        [
+          "syndrome",
+          373377
+        ],
+        [
+          "tomography",
+          804093
+        ]
+      ],
+      "normalized_stage_weights": [
+        [
+          "peeling",
+          0.33040956824728773
+        ],
+        [
+          "recovery",
+          0.45970742223902045
+        ],
+        [
+          "grouping",
+          0.04358471767515166
+        ],
+        [
+          "syndrome",
+          0.05273353757532013
+        ],
+        [
+          "tomography",
+          0.11356475426322014
+        ]
+      ],
+      "physical_copy_budget": 7080465
+    },
+    "initial_progressive_winner_N_candidate": 7080465,
+    "refined_N_candidate": 7080465,
+    "copy_increase_vs_mean_only": 581035,
+    "copy_increase_percent_vs_mean_only": 8.939783950284871,
+    "budget_refinement_enabled": true,
+    "budget_refinement_note": "Skipped: no operationally valid final incumbent satisfying both mean-error and empirical success-probability constraints.",
+    "budget_refinement_trials": [],
+    "evaluation_attempt_count": 2544,
+    "actual_learner_run_count": 789,
+    "cache_hit_count": 1755,
+    "unique_cached_seed_evaluation_count": 789,
+    "preflight_rejection_count": 0,
+    "budget_refinement_actual_learner_run_count": 0,
+    "optimization_learner_seed_call_count": 789,
+    "holdout": {
+      "status": "not_evaluated",
+      "evaluation": null,
+      "configured_historical_seeds": [
+        6220001,
+        6220002,
+        6220003,
+        6220004
+      ],
+      "learner_seed_calls": [],
+      "holdout_post_selection_only": false
+    },
+    "round_summaries": [
+      {
+        "round_index": 1,
+        "candidate_pool_size": 16,
+        "newly_activated_candidates": 16,
+        "seed_fidelities_used": [
+          1,
+          2,
+          4
+        ],
+        "halving_summaries": [
+          {
+            "progressive_round_index": 1,
+            "candidate_pool_size": 16,
+            "seed_fidelity": 1,
+            "candidates_entering": 16,
+            "candidates_retained": 8,
+            "best_candidate_id": "candidate-0012",
+            "best_mean_loss": 0.5372326812168604,
+            "best_max_loss": 0.5372326812168604,
+            "new_learner_runs": 16,
+            "cache_hits": 0
+          },
+          {
+            "progressive_round_index": 1,
+            "candidate_pool_size": 16,
+            "seed_fidelity": 2,
+            "candidates_entering": 8,
+            "candidates_retained": 4,
+            "best_candidate_id": "candidate-0012",
+            "best_mean_loss": 0.5371795793470391,
+            "best_max_loss": 0.5372326812168604,
+            "new_learner_runs": 8,
+            "cache_hits": 8
+          },
+          {
+            "progressive_round_index": 1,
+            "candidate_pool_size": 16,
+            "seed_fidelity": 4,
+            "candidates_entering": 4,
+            "candidates_retained": 1,
+            "best_candidate_id": "candidate-0012",
+            "best_mean_loss": 0.537205114437099,
+            "best_max_loss": 0.5372520781261723,
+            "new_learner_runs": 8,
+            "cache_hits": 8
+          }
+        ],
+        "round_search_winner_id": "candidate-0012",
+        "incumbent_before_id": null,
+        "incumbent_after_id": "candidate-0012",
+        "comparison_seed_count": 16,
+        "old_incumbent_comparison_mean_loss": null,
+        "challenger_comparison_mean_loss": 0.5372722641584773,
+        "selected_incumbent_comparison_mean_loss": 0.5372722641584773,
+        "relative_improvement": null,
+        "low_improvement_streak": 0,
+        "cumulative_unique_semantic_evaluations": 44,
+        "cumulative_actual_learner_runs": 44,
+        "cumulative_cache_hits": 20,
+        "round_wall_clock_seconds": null,
+        "convergence_stop": false
+      },
+      {
+        "round_index": 2,
+        "candidate_pool_size": 32,
+        "newly_activated_candidates": 16,
+        "seed_fidelities_used": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "halving_summaries": [
+          {
+            "progressive_round_index": 2,
+            "candidate_pool_size": 32,
+            "seed_fidelity": 1,
+            "candidates_entering": 32,
+            "candidates_retained": 16,
+            "best_candidate_id": "candidate-0025",
+            "best_mean_loss": 0.04575197322996532,
+            "best_max_loss": 0.04575197322996532,
+            "new_learner_runs": 16,
+            "cache_hits": 16
+          },
+          {
+            "progressive_round_index": 2,
+            "candidate_pool_size": 32,
+            "seed_fidelity": 2,
+            "candidates_entering": 16,
+            "candidates_retained": 8,
+            "best_candidate_id": "candidate-0025",
+            "best_mean_loss": 0.1741929348536711,
+            "best_max_loss": 0.3026338964773769,
+            "new_learner_runs": 10,
+            "cache_hits": 22
+          },
+          {
+            "progressive_round_index": 2,
+            "candidate_pool_size": 32,
+            "seed_fidelity": 4,
+            "candidates_entering": 8,
+            "candidates_retained": 4,
+            "best_candidate_id": "candidate-0025",
+            "best_mean_loss": 0.17361719071998907,
+            "best_max_loss": 0.3044477414659127,
+            "new_learner_runs": 12,
+            "cache_hits": 20
+          },
+          {
+            "progressive_round_index": 2,
+            "candidate_pool_size": 32,
+            "seed_fidelity": 8,
+            "candidates_entering": 4,
+            "candidates_retained": 1,
+            "best_candidate_id": "candidate-0025",
+            "best_mean_loss": 0.16757875210479992,
+            "best_max_loss": 0.3044477414659127,
+            "new_learner_runs": 12,
+            "cache_hits": 20
+          }
+        ],
+        "round_search_winner_id": "candidate-0025",
+        "incumbent_before_id": "candidate-0012",
+        "incumbent_after_id": "candidate-0025",
+        "comparison_seed_count": 16,
+        "old_incumbent_comparison_mean_loss": 0.5372722641584773,
+        "challenger_comparison_mean_loss": 0.1295830308136769,
+        "selected_incumbent_comparison_mean_loss": 0.1295830308136769,
+        "relative_improvement": 0.0,
+        "low_improvement_streak": 0,
+        "cumulative_unique_semantic_evaluations": 102,
+        "cumulative_actual_learner_runs": 102,
+        "cumulative_cache_hits": 122,
+        "round_wall_clock_seconds": null,
+        "convergence_stop": false
+      },
+      {
+        "round_index": 3,
+        "candidate_pool_size": 64,
+        "newly_activated_candidates": 32,
+        "seed_fidelities_used": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "halving_summaries": [
+          {
+            "progressive_round_index": 3,
+            "candidate_pool_size": 64,
+            "seed_fidelity": 1,
+            "candidates_entering": 64,
+            "candidates_retained": 32,
+            "best_candidate_id": "candidate-0025",
+            "best_mean_loss": 0.04575197322996532,
+            "best_max_loss": 0.04575197322996532,
+            "new_learner_runs": 32,
+            "cache_hits": 32
+          },
+          {
+            "progressive_round_index": 3,
+            "candidate_pool_size": 64,
+            "seed_fidelity": 2,
+            "candidates_entering": 32,
+            "candidates_retained": 16,
+            "best_candidate_id": "candidate-0025",
+            "best_mean_loss": 0.1741929348536711,
+            "best_max_loss": 0.3026338964773769,
+            "new_learner_runs": 16,
+            "cache_hits": 48
+          },
+          {
+            "progressive_round_index": 3,
+            "candidate_pool_size": 64,
+            "seed_fidelity": 4,
+            "candidates_entering": 16,
+            "candidates_retained": 8,
+            "best_candidate_id": "candidate-0025",
+            "best_mean_loss": 0.17361719071998907,
+            "best_max_loss": 0.3044477414659127,
+            "new_learner_runs": 16,
+            "cache_hits": 48
+          },
+          {
+            "progressive_round_index": 3,
+            "candidate_pool_size": 64,
+            "seed_fidelity": 8,
+            "candidates_entering": 8,
+            "candidates_retained": 4,
+            "best_candidate_id": "candidate-0025",
+            "best_mean_loss": 0.16757875210479992,
+            "best_max_loss": 0.3044477414659127,
+            "new_learner_runs": 16,
+            "cache_hits": 48
+          },
+          {
+            "progressive_round_index": 3,
+            "candidate_pool_size": 64,
+            "seed_fidelity": 16,
+            "candidates_entering": 4,
+            "candidates_retained": 1,
+            "best_candidate_id": "candidate-0025",
+            "best_mean_loss": 0.1295830308136769,
+            "best_max_loss": 0.4367686794039257,
+            "new_learner_runs": 16,
+            "cache_hits": 48
+          }
+        ],
+        "round_search_winner_id": "candidate-0025",
+        "incumbent_before_id": "candidate-0025",
+        "incumbent_after_id": "candidate-0025",
+        "comparison_seed_count": 16,
+        "old_incumbent_comparison_mean_loss": 0.1295830308136769,
+        "challenger_comparison_mean_loss": 0.1295830308136769,
+        "selected_incumbent_comparison_mean_loss": 0.1295830308136769,
+        "relative_improvement": 0.0,
+        "low_improvement_streak": 0,
+        "cumulative_unique_semantic_evaluations": 198,
+        "cumulative_actual_learner_runs": 198,
+        "cumulative_cache_hits": 362,
+        "round_wall_clock_seconds": null,
+        "convergence_stop": false
+      },
+      {
+        "round_index": 4,
+        "candidate_pool_size": 128,
+        "newly_activated_candidates": 64,
+        "seed_fidelities_used": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "halving_summaries": [
+          {
+            "progressive_round_index": 4,
+            "candidate_pool_size": 128,
+            "seed_fidelity": 1,
+            "candidates_entering": 128,
+            "candidates_retained": 64,
+            "best_candidate_id": "candidate-0104",
+            "best_mean_loss": 0.023556087120534513,
+            "best_max_loss": 0.023556087120534513,
+            "new_learner_runs": 64,
+            "cache_hits": 64
+          },
+          {
+            "progressive_round_index": 4,
+            "candidate_pool_size": 128,
+            "seed_fidelity": 2,
+            "candidates_entering": 64,
+            "candidates_retained": 32,
+            "best_candidate_id": "candidate-0104",
+            "best_mean_loss": 0.1584866646255957,
+            "best_max_loss": 0.2934172421306569,
+            "new_learner_runs": 31,
+            "cache_hits": 97
+          },
+          {
+            "progressive_round_index": 4,
+            "candidate_pool_size": 128,
+            "seed_fidelity": 4,
+            "candidates_entering": 32,
+            "candidates_retained": 16,
+            "best_candidate_id": "candidate-0104",
+            "best_mean_loss": 0.14947015960078477,
+            "best_max_loss": 0.2934172421306569,
+            "new_learner_runs": 36,
+            "cache_hits": 92
+          },
+          {
+            "progressive_round_index": 4,
+            "candidate_pool_size": 128,
+            "seed_fidelity": 8,
+            "candidates_entering": 16,
+            "candidates_retained": 8,
+            "best_candidate_id": "candidate-0090",
+            "best_mean_loss": 0.14258505418000422,
+            "best_max_loss": 0.30849942606800995,
+            "new_learner_runs": 40,
+            "cache_hits": 88
+          },
+          {
+            "progressive_round_index": 4,
+            "candidate_pool_size": 128,
+            "seed_fidelity": 16,
+            "candidates_entering": 8,
+            "candidates_retained": 1,
+            "best_candidate_id": "candidate-0025",
+            "best_mean_loss": 0.1295830308136769,
+            "best_max_loss": 0.4367686794039257,
+            "new_learner_runs": 56,
+            "cache_hits": 72
+          }
+        ],
+        "round_search_winner_id": "candidate-0025",
+        "incumbent_before_id": "candidate-0025",
+        "incumbent_after_id": "candidate-0025",
+        "comparison_seed_count": 16,
+        "old_incumbent_comparison_mean_loss": 0.1295830308136769,
+        "challenger_comparison_mean_loss": 0.1295830308136769,
+        "selected_incumbent_comparison_mean_loss": 0.1295830308136769,
+        "relative_improvement": 0.0,
+        "low_improvement_streak": 0,
+        "cumulative_unique_semantic_evaluations": 425,
+        "cumulative_actual_learner_runs": 425,
+        "cumulative_cache_hits": 791,
+        "round_wall_clock_seconds": null,
+        "convergence_stop": false
+      },
+      {
+        "round_index": 5,
+        "candidate_pool_size": 256,
+        "newly_activated_candidates": 128,
+        "seed_fidelities_used": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "halving_summaries": [
+          {
+            "progressive_round_index": 5,
+            "candidate_pool_size": 256,
+            "seed_fidelity": 1,
+            "candidates_entering": 256,
+            "candidates_retained": 128,
+            "best_candidate_id": "candidate-0104",
+            "best_mean_loss": 0.023556087120534513,
+            "best_max_loss": 0.023556087120534513,
+            "new_learner_runs": 128,
+            "cache_hits": 128
+          },
+          {
+            "progressive_round_index": 5,
+            "candidate_pool_size": 256,
+            "seed_fidelity": 2,
+            "candidates_entering": 128,
+            "candidates_retained": 64,
+            "best_candidate_id": "candidate-0162",
+            "best_mean_loss": 0.049572680493204464,
+            "best_max_loss": 0.05255955883459549,
+            "new_learner_runs": 64,
+            "cache_hits": 192
+          },
+          {
+            "progressive_round_index": 5,
+            "candidate_pool_size": 256,
+            "seed_fidelity": 4,
+            "candidates_entering": 64,
+            "candidates_retained": 32,
+            "best_candidate_id": "candidate-0162",
+            "best_mean_loss": 0.048778003415282475,
+            "best_max_loss": 0.05255955883459549,
+            "new_learner_runs": 60,
+            "cache_hits": 196
+          },
+          {
+            "progressive_round_index": 5,
+            "candidate_pool_size": 256,
+            "seed_fidelity": 8,
+            "candidates_entering": 32,
+            "candidates_retained": 16,
+            "best_candidate_id": "candidate-0162",
+            "best_mean_loss": 0.04884156942861212,
+            "best_max_loss": 0.05255955883459549,
+            "new_learner_runs": 56,
+            "cache_hits": 200
+          },
+          {
+            "progressive_round_index": 5,
+            "candidate_pool_size": 256,
+            "seed_fidelity": 16,
+            "candidates_entering": 16,
+            "candidates_retained": 1,
+            "best_candidate_id": "candidate-0162",
+            "best_mean_loss": 0.0487625972217902,
+            "best_max_loss": 0.05411433738347967,
+            "new_learner_runs": 56,
+            "cache_hits": 200
+          }
+        ],
+        "round_search_winner_id": "candidate-0162",
+        "incumbent_before_id": "candidate-0025",
+        "incumbent_after_id": "candidate-0162",
+        "comparison_seed_count": 16,
+        "old_incumbent_comparison_mean_loss": 0.1295830308136769,
+        "challenger_comparison_mean_loss": 0.0487625972217902,
+        "selected_incumbent_comparison_mean_loss": 0.0487625972217902,
+        "relative_improvement": 0.0,
+        "low_improvement_streak": 0,
+        "cumulative_unique_semantic_evaluations": 789,
+        "cumulative_actual_learner_runs": 789,
+        "cumulative_cache_hits": 1739,
+        "round_wall_clock_seconds": null,
+        "convergence_stop": true
+      }
+    ],
+    "d1_grouping": null,
+    "tuning": {
+      "candidate_id": "candidate-0162",
+      "N_candidate": 7080465,
+      "final_tuning_seed_count": 16,
+      "n_seeds_evaluated": 16,
+      "operationally_valid": true,
+      "mean_error_feasible": true,
+      "success_fraction_feasible": false,
+      "final_target_feasible": false,
+      "all_error_feasible_deprecated_alias": false,
+      "success_probability_threshold": 0.85,
+      "error_success_count": 11,
+      "required_error_success_count": 14,
+      "error_success_fraction": 0.6875,
+      "mean_trace_distance": 0.0487625972217902,
+      "median_trace_distance": 0.04889398435521469,
+      "max_trace_distance": 0.05411433738347967,
+      "trace_distance_std": 0.003124637752475519,
+      "per_seed_trace_distances": [
+        0.05255955883459549,
+        0.04658580215181344,
+        0.044280508103440114,
+        0.05168614457128083,
+        0.04627130037258565,
+        0.048944125887012815,
+        0.0505534791085068,
+        0.049851636399661836,
+        0.05359868836216582,
+        0.046654581590570884,
+        0.04738958930518722,
+        0.04725356251056877,
+        0.04893569103936394,
+        0.05411433738347967,
+        0.042670272257344474,
+        0.04885227767106544
+      ],
+      "mean_realized_copies": 6707087.0,
+      "max_realized_copies": 6707087,
+      "mean_copy_utilization": 0.9472664577820807,
+      "max_copy_utilization": 0.9472664577820807,
+      "operational_success_rate": 1.0,
+      "budget_feasible_rate": 1.0,
+      "mean_stage_copies": {
+        "block_tomography_pool": 804093.0,
+        "grouping_ordinary_pool": 308600.0,
+        "peeling_bell_pool": 2339452.0,
+        "recovery_bell_pool": 3254942.0,
+        "syndrome_sign_pool": 0.0
+      },
+      "max_stage_copies": {
+        "block_tomography_pool": 804093,
+        "grouping_ordinary_pool": 308600,
+        "peeling_bell_pool": 2339452,
+        "recovery_bell_pool": 3254942,
+        "syndrome_sign_pool": 0
+      },
+      "per_seed": [
+        {
+          "learner_seed": 6210001,
+          "execution_branch": "generic_d_ge_2",
+          "operational_success": true,
+          "estimator_available": true,
+          "budget_feasible": true,
+          "trace_distance": 0.05255955883459549,
+          "error_feasible_diagnostic": false,
+          "realized_total": 6707087,
+          "copy_utilization": 0.9472664577820807,
+          "realized_copy_ledger": {
+            "peeling_bell_pool": 2339452,
+            "recovery_bell_pool": 3254942,
+            "grouping_ordinary_pool": 308600,
+            "syndrome_sign_pool": 0,
+            "block_tomography_pool": 804093
+          },
+          "fixed_budget_stage_records": {
+            "peeling": {
+              "assigned_cap": 2339453,
+              "realized_copies": 2339452,
+              "unused_copies": 1,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "recovery": {
+              "assigned_cap": 3254942,
+              "realized_copies": 3254942,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "grouping": {
+              "assigned_cap": 308600,
+              "realized_copies": 308600,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "syndrome": {
+              "assigned_cap": 373377,
+              "realized_copies": 0,
+              "unused_copies": 373377,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "tomography": {
+              "assigned_cap": 804093,
+              "realized_copies": 804093,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            }
+          },
+          "tomography_realized_copies": 804093,
+          "failure_stage": null,
+          "failure_reason": null,
+          "preflight_rejected": false
+        },
+        {
+          "learner_seed": 6210002,
+          "execution_branch": "generic_d_ge_2",
+          "operational_success": true,
+          "estimator_available": true,
+          "budget_feasible": true,
+          "trace_distance": 0.04658580215181344,
+          "error_feasible_diagnostic": true,
+          "realized_total": 6707087,
+          "copy_utilization": 0.9472664577820807,
+          "realized_copy_ledger": {
+            "peeling_bell_pool": 2339452,
+            "recovery_bell_pool": 3254942,
+            "grouping_ordinary_pool": 308600,
+            "syndrome_sign_pool": 0,
+            "block_tomography_pool": 804093
+          },
+          "fixed_budget_stage_records": {
+            "peeling": {
+              "assigned_cap": 2339453,
+              "realized_copies": 2339452,
+              "unused_copies": 1,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "recovery": {
+              "assigned_cap": 3254942,
+              "realized_copies": 3254942,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "grouping": {
+              "assigned_cap": 308600,
+              "realized_copies": 308600,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "syndrome": {
+              "assigned_cap": 373377,
+              "realized_copies": 0,
+              "unused_copies": 373377,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "tomography": {
+              "assigned_cap": 804093,
+              "realized_copies": 804093,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            }
+          },
+          "tomography_realized_copies": 804093,
+          "failure_stage": null,
+          "failure_reason": null,
+          "preflight_rejected": false
+        },
+        {
+          "learner_seed": 6210003,
+          "execution_branch": "generic_d_ge_2",
+          "operational_success": true,
+          "estimator_available": true,
+          "budget_feasible": true,
+          "trace_distance": 0.044280508103440114,
+          "error_feasible_diagnostic": true,
+          "realized_total": 6707087,
+          "copy_utilization": 0.9472664577820807,
+          "realized_copy_ledger": {
+            "peeling_bell_pool": 2339452,
+            "recovery_bell_pool": 3254942,
+            "grouping_ordinary_pool": 308600,
+            "syndrome_sign_pool": 0,
+            "block_tomography_pool": 804093
+          },
+          "fixed_budget_stage_records": {
+            "peeling": {
+              "assigned_cap": 2339453,
+              "realized_copies": 2339452,
+              "unused_copies": 1,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "recovery": {
+              "assigned_cap": 3254942,
+              "realized_copies": 3254942,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "grouping": {
+              "assigned_cap": 308600,
+              "realized_copies": 308600,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "syndrome": {
+              "assigned_cap": 373377,
+              "realized_copies": 0,
+              "unused_copies": 373377,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "tomography": {
+              "assigned_cap": 804093,
+              "realized_copies": 804093,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            }
+          },
+          "tomography_realized_copies": 804093,
+          "failure_stage": null,
+          "failure_reason": null,
+          "preflight_rejected": false
+        },
+        {
+          "learner_seed": 6210004,
+          "execution_branch": "generic_d_ge_2",
+          "operational_success": true,
+          "estimator_available": true,
+          "budget_feasible": true,
+          "trace_distance": 0.05168614457128083,
+          "error_feasible_diagnostic": false,
+          "realized_total": 6707087,
+          "copy_utilization": 0.9472664577820807,
+          "realized_copy_ledger": {
+            "peeling_bell_pool": 2339452,
+            "recovery_bell_pool": 3254942,
+            "grouping_ordinary_pool": 308600,
+            "syndrome_sign_pool": 0,
+            "block_tomography_pool": 804093
+          },
+          "fixed_budget_stage_records": {
+            "peeling": {
+              "assigned_cap": 2339453,
+              "realized_copies": 2339452,
+              "unused_copies": 1,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "recovery": {
+              "assigned_cap": 3254942,
+              "realized_copies": 3254942,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "grouping": {
+              "assigned_cap": 308600,
+              "realized_copies": 308600,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "syndrome": {
+              "assigned_cap": 373377,
+              "realized_copies": 0,
+              "unused_copies": 373377,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "tomography": {
+              "assigned_cap": 804093,
+              "realized_copies": 804093,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            }
+          },
+          "tomography_realized_copies": 804093,
+          "failure_stage": null,
+          "failure_reason": null,
+          "preflight_rejected": false
+        },
+        {
+          "learner_seed": 6210005,
+          "execution_branch": "generic_d_ge_2",
+          "operational_success": true,
+          "estimator_available": true,
+          "budget_feasible": true,
+          "trace_distance": 0.04627130037258565,
+          "error_feasible_diagnostic": true,
+          "realized_total": 6707087,
+          "copy_utilization": 0.9472664577820807,
+          "realized_copy_ledger": {
+            "peeling_bell_pool": 2339452,
+            "recovery_bell_pool": 3254942,
+            "grouping_ordinary_pool": 308600,
+            "syndrome_sign_pool": 0,
+            "block_tomography_pool": 804093
+          },
+          "fixed_budget_stage_records": {
+            "peeling": {
+              "assigned_cap": 2339453,
+              "realized_copies": 2339452,
+              "unused_copies": 1,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "recovery": {
+              "assigned_cap": 3254942,
+              "realized_copies": 3254942,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "grouping": {
+              "assigned_cap": 308600,
+              "realized_copies": 308600,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "syndrome": {
+              "assigned_cap": 373377,
+              "realized_copies": 0,
+              "unused_copies": 373377,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "tomography": {
+              "assigned_cap": 804093,
+              "realized_copies": 804093,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            }
+          },
+          "tomography_realized_copies": 804093,
+          "failure_stage": null,
+          "failure_reason": null,
+          "preflight_rejected": false
+        },
+        {
+          "learner_seed": 6210006,
+          "execution_branch": "generic_d_ge_2",
+          "operational_success": true,
+          "estimator_available": true,
+          "budget_feasible": true,
+          "trace_distance": 0.048944125887012815,
+          "error_feasible_diagnostic": true,
+          "realized_total": 6707087,
+          "copy_utilization": 0.9472664577820807,
+          "realized_copy_ledger": {
+            "peeling_bell_pool": 2339452,
+            "recovery_bell_pool": 3254942,
+            "grouping_ordinary_pool": 308600,
+            "syndrome_sign_pool": 0,
+            "block_tomography_pool": 804093
+          },
+          "fixed_budget_stage_records": {
+            "peeling": {
+              "assigned_cap": 2339453,
+              "realized_copies": 2339452,
+              "unused_copies": 1,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "recovery": {
+              "assigned_cap": 3254942,
+              "realized_copies": 3254942,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "grouping": {
+              "assigned_cap": 308600,
+              "realized_copies": 308600,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "syndrome": {
+              "assigned_cap": 373377,
+              "realized_copies": 0,
+              "unused_copies": 373377,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "tomography": {
+              "assigned_cap": 804093,
+              "realized_copies": 804093,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            }
+          },
+          "tomography_realized_copies": 804093,
+          "failure_stage": null,
+          "failure_reason": null,
+          "preflight_rejected": false
+        },
+        {
+          "learner_seed": 6210007,
+          "execution_branch": "generic_d_ge_2",
+          "operational_success": true,
+          "estimator_available": true,
+          "budget_feasible": true,
+          "trace_distance": 0.0505534791085068,
+          "error_feasible_diagnostic": false,
+          "realized_total": 6707087,
+          "copy_utilization": 0.9472664577820807,
+          "realized_copy_ledger": {
+            "peeling_bell_pool": 2339452,
+            "recovery_bell_pool": 3254942,
+            "grouping_ordinary_pool": 308600,
+            "syndrome_sign_pool": 0,
+            "block_tomography_pool": 804093
+          },
+          "fixed_budget_stage_records": {
+            "peeling": {
+              "assigned_cap": 2339453,
+              "realized_copies": 2339452,
+              "unused_copies": 1,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "recovery": {
+              "assigned_cap": 3254942,
+              "realized_copies": 3254942,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "grouping": {
+              "assigned_cap": 308600,
+              "realized_copies": 308600,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "syndrome": {
+              "assigned_cap": 373377,
+              "realized_copies": 0,
+              "unused_copies": 373377,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "tomography": {
+              "assigned_cap": 804093,
+              "realized_copies": 804093,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            }
+          },
+          "tomography_realized_copies": 804093,
+          "failure_stage": null,
+          "failure_reason": null,
+          "preflight_rejected": false
+        },
+        {
+          "learner_seed": 6210008,
+          "execution_branch": "generic_d_ge_2",
+          "operational_success": true,
+          "estimator_available": true,
+          "budget_feasible": true,
+          "trace_distance": 0.049851636399661836,
+          "error_feasible_diagnostic": true,
+          "realized_total": 6707087,
+          "copy_utilization": 0.9472664577820807,
+          "realized_copy_ledger": {
+            "peeling_bell_pool": 2339452,
+            "recovery_bell_pool": 3254942,
+            "grouping_ordinary_pool": 308600,
+            "syndrome_sign_pool": 0,
+            "block_tomography_pool": 804093
+          },
+          "fixed_budget_stage_records": {
+            "peeling": {
+              "assigned_cap": 2339453,
+              "realized_copies": 2339452,
+              "unused_copies": 1,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "recovery": {
+              "assigned_cap": 3254942,
+              "realized_copies": 3254942,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "grouping": {
+              "assigned_cap": 308600,
+              "realized_copies": 308600,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "syndrome": {
+              "assigned_cap": 373377,
+              "realized_copies": 0,
+              "unused_copies": 373377,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "tomography": {
+              "assigned_cap": 804093,
+              "realized_copies": 804093,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            }
+          },
+          "tomography_realized_copies": 804093,
+          "failure_stage": null,
+          "failure_reason": null,
+          "preflight_rejected": false
+        },
+        {
+          "learner_seed": 6210009,
+          "execution_branch": "generic_d_ge_2",
+          "operational_success": true,
+          "estimator_available": true,
+          "budget_feasible": true,
+          "trace_distance": 0.05359868836216582,
+          "error_feasible_diagnostic": false,
+          "realized_total": 6707087,
+          "copy_utilization": 0.9472664577820807,
+          "realized_copy_ledger": {
+            "peeling_bell_pool": 2339452,
+            "recovery_bell_pool": 3254942,
+            "grouping_ordinary_pool": 308600,
+            "syndrome_sign_pool": 0,
+            "block_tomography_pool": 804093
+          },
+          "fixed_budget_stage_records": {
+            "peeling": {
+              "assigned_cap": 2339453,
+              "realized_copies": 2339452,
+              "unused_copies": 1,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "recovery": {
+              "assigned_cap": 3254942,
+              "realized_copies": 3254942,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "grouping": {
+              "assigned_cap": 308600,
+              "realized_copies": 308600,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "syndrome": {
+              "assigned_cap": 373377,
+              "realized_copies": 0,
+              "unused_copies": 373377,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "tomography": {
+              "assigned_cap": 804093,
+              "realized_copies": 804093,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            }
+          },
+          "tomography_realized_copies": 804093,
+          "failure_stage": null,
+          "failure_reason": null,
+          "preflight_rejected": false
+        },
+        {
+          "learner_seed": 6210010,
+          "execution_branch": "generic_d_ge_2",
+          "operational_success": true,
+          "estimator_available": true,
+          "budget_feasible": true,
+          "trace_distance": 0.046654581590570884,
+          "error_feasible_diagnostic": true,
+          "realized_total": 6707087,
+          "copy_utilization": 0.9472664577820807,
+          "realized_copy_ledger": {
+            "peeling_bell_pool": 2339452,
+            "recovery_bell_pool": 3254942,
+            "grouping_ordinary_pool": 308600,
+            "syndrome_sign_pool": 0,
+            "block_tomography_pool": 804093
+          },
+          "fixed_budget_stage_records": {
+            "peeling": {
+              "assigned_cap": 2339453,
+              "realized_copies": 2339452,
+              "unused_copies": 1,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "recovery": {
+              "assigned_cap": 3254942,
+              "realized_copies": 3254942,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "grouping": {
+              "assigned_cap": 308600,
+              "realized_copies": 308600,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "syndrome": {
+              "assigned_cap": 373377,
+              "realized_copies": 0,
+              "unused_copies": 373377,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "tomography": {
+              "assigned_cap": 804093,
+              "realized_copies": 804093,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            }
+          },
+          "tomography_realized_copies": 804093,
+          "failure_stage": null,
+          "failure_reason": null,
+          "preflight_rejected": false
+        },
+        {
+          "learner_seed": 6210011,
+          "execution_branch": "generic_d_ge_2",
+          "operational_success": true,
+          "estimator_available": true,
+          "budget_feasible": true,
+          "trace_distance": 0.04738958930518722,
+          "error_feasible_diagnostic": true,
+          "realized_total": 6707087,
+          "copy_utilization": 0.9472664577820807,
+          "realized_copy_ledger": {
+            "peeling_bell_pool": 2339452,
+            "recovery_bell_pool": 3254942,
+            "grouping_ordinary_pool": 308600,
+            "syndrome_sign_pool": 0,
+            "block_tomography_pool": 804093
+          },
+          "fixed_budget_stage_records": {
+            "peeling": {
+              "assigned_cap": 2339453,
+              "realized_copies": 2339452,
+              "unused_copies": 1,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "recovery": {
+              "assigned_cap": 3254942,
+              "realized_copies": 3254942,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "grouping": {
+              "assigned_cap": 308600,
+              "realized_copies": 308600,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "syndrome": {
+              "assigned_cap": 373377,
+              "realized_copies": 0,
+              "unused_copies": 373377,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "tomography": {
+              "assigned_cap": 804093,
+              "realized_copies": 804093,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            }
+          },
+          "tomography_realized_copies": 804093,
+          "failure_stage": null,
+          "failure_reason": null,
+          "preflight_rejected": false
+        },
+        {
+          "learner_seed": 6210012,
+          "execution_branch": "generic_d_ge_2",
+          "operational_success": true,
+          "estimator_available": true,
+          "budget_feasible": true,
+          "trace_distance": 0.04725356251056877,
+          "error_feasible_diagnostic": true,
+          "realized_total": 6707087,
+          "copy_utilization": 0.9472664577820807,
+          "realized_copy_ledger": {
+            "peeling_bell_pool": 2339452,
+            "recovery_bell_pool": 3254942,
+            "grouping_ordinary_pool": 308600,
+            "syndrome_sign_pool": 0,
+            "block_tomography_pool": 804093
+          },
+          "fixed_budget_stage_records": {
+            "peeling": {
+              "assigned_cap": 2339453,
+              "realized_copies": 2339452,
+              "unused_copies": 1,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "recovery": {
+              "assigned_cap": 3254942,
+              "realized_copies": 3254942,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "grouping": {
+              "assigned_cap": 308600,
+              "realized_copies": 308600,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "syndrome": {
+              "assigned_cap": 373377,
+              "realized_copies": 0,
+              "unused_copies": 373377,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "tomography": {
+              "assigned_cap": 804093,
+              "realized_copies": 804093,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            }
+          },
+          "tomography_realized_copies": 804093,
+          "failure_stage": null,
+          "failure_reason": null,
+          "preflight_rejected": false
+        },
+        {
+          "learner_seed": 6210013,
+          "execution_branch": "generic_d_ge_2",
+          "operational_success": true,
+          "estimator_available": true,
+          "budget_feasible": true,
+          "trace_distance": 0.04893569103936394,
+          "error_feasible_diagnostic": true,
+          "realized_total": 6707087,
+          "copy_utilization": 0.9472664577820807,
+          "realized_copy_ledger": {
+            "peeling_bell_pool": 2339452,
+            "recovery_bell_pool": 3254942,
+            "grouping_ordinary_pool": 308600,
+            "syndrome_sign_pool": 0,
+            "block_tomography_pool": 804093
+          },
+          "fixed_budget_stage_records": {
+            "peeling": {
+              "assigned_cap": 2339453,
+              "realized_copies": 2339452,
+              "unused_copies": 1,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "recovery": {
+              "assigned_cap": 3254942,
+              "realized_copies": 3254942,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "grouping": {
+              "assigned_cap": 308600,
+              "realized_copies": 308600,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "syndrome": {
+              "assigned_cap": 373377,
+              "realized_copies": 0,
+              "unused_copies": 373377,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "tomography": {
+              "assigned_cap": 804093,
+              "realized_copies": 804093,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            }
+          },
+          "tomography_realized_copies": 804093,
+          "failure_stage": null,
+          "failure_reason": null,
+          "preflight_rejected": false
+        },
+        {
+          "learner_seed": 6210014,
+          "execution_branch": "generic_d_ge_2",
+          "operational_success": true,
+          "estimator_available": true,
+          "budget_feasible": true,
+          "trace_distance": 0.05411433738347967,
+          "error_feasible_diagnostic": false,
+          "realized_total": 6707087,
+          "copy_utilization": 0.9472664577820807,
+          "realized_copy_ledger": {
+            "peeling_bell_pool": 2339452,
+            "recovery_bell_pool": 3254942,
+            "grouping_ordinary_pool": 308600,
+            "syndrome_sign_pool": 0,
+            "block_tomography_pool": 804093
+          },
+          "fixed_budget_stage_records": {
+            "peeling": {
+              "assigned_cap": 2339453,
+              "realized_copies": 2339452,
+              "unused_copies": 1,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "recovery": {
+              "assigned_cap": 3254942,
+              "realized_copies": 3254942,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "grouping": {
+              "assigned_cap": 308600,
+              "realized_copies": 308600,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "syndrome": {
+              "assigned_cap": 373377,
+              "realized_copies": 0,
+              "unused_copies": 373377,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "tomography": {
+              "assigned_cap": 804093,
+              "realized_copies": 804093,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            }
+          },
+          "tomography_realized_copies": 804093,
+          "failure_stage": null,
+          "failure_reason": null,
+          "preflight_rejected": false
+        },
+        {
+          "learner_seed": 6210015,
+          "execution_branch": "generic_d_ge_2",
+          "operational_success": true,
+          "estimator_available": true,
+          "budget_feasible": true,
+          "trace_distance": 0.042670272257344474,
+          "error_feasible_diagnostic": true,
+          "realized_total": 6707087,
+          "copy_utilization": 0.9472664577820807,
+          "realized_copy_ledger": {
+            "peeling_bell_pool": 2339452,
+            "recovery_bell_pool": 3254942,
+            "grouping_ordinary_pool": 308600,
+            "syndrome_sign_pool": 0,
+            "block_tomography_pool": 804093
+          },
+          "fixed_budget_stage_records": {
+            "peeling": {
+              "assigned_cap": 2339453,
+              "realized_copies": 2339452,
+              "unused_copies": 1,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "recovery": {
+              "assigned_cap": 3254942,
+              "realized_copies": 3254942,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "grouping": {
+              "assigned_cap": 308600,
+              "realized_copies": 308600,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "syndrome": {
+              "assigned_cap": 373377,
+              "realized_copies": 0,
+              "unused_copies": 373377,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "tomography": {
+              "assigned_cap": 804093,
+              "realized_copies": 804093,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            }
+          },
+          "tomography_realized_copies": 804093,
+          "failure_stage": null,
+          "failure_reason": null,
+          "preflight_rejected": false
+        },
+        {
+          "learner_seed": 6210016,
+          "execution_branch": "generic_d_ge_2",
+          "operational_success": true,
+          "estimator_available": true,
+          "budget_feasible": true,
+          "trace_distance": 0.04885227767106544,
+          "error_feasible_diagnostic": true,
+          "realized_total": 6707087,
+          "copy_utilization": 0.9472664577820807,
+          "realized_copy_ledger": {
+            "peeling_bell_pool": 2339452,
+            "recovery_bell_pool": 3254942,
+            "grouping_ordinary_pool": 308600,
+            "syndrome_sign_pool": 0,
+            "block_tomography_pool": 804093
+          },
+          "fixed_budget_stage_records": {
+            "peeling": {
+              "assigned_cap": 2339453,
+              "realized_copies": 2339452,
+              "unused_copies": 1,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "recovery": {
+              "assigned_cap": 3254942,
+              "realized_copies": 3254942,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "grouping": {
+              "assigned_cap": 308600,
+              "realized_copies": 308600,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "syndrome": {
+              "assigned_cap": 373377,
+              "realized_copies": 0,
+              "unused_copies": 373377,
+              "budget_exhausted": false,
+              "stage_complete": true,
+              "degradation_reason": null
+            },
+            "tomography": {
+              "assigned_cap": 804093,
+              "realized_copies": 804093,
+              "unused_copies": 0,
+              "budget_exhausted": true,
+              "stage_complete": true,
+              "degradation_reason": null
+            }
+          },
+          "tomography_realized_copies": 804093,
+          "failure_stage": null,
+          "failure_reason": null,
+          "preflight_rejected": false
+        }
+      ]
+    }
+  },
+  "failure": null,
+  "state_reconstruction": {
+    "historical_raw_dense_digest_sha256": "14c8031a73e9a1ad0d50c09461be55856020317ef5b0fcac0ef37b2ddc4c4c62",
+    "current_raw_dense_digest_sha256": "f6d4067643644b2e5c4ae74a9a1061235331d6edc96e826af14ab8e440b4b3d3",
+    "raw_digest_matches_historical": false,
+    "repeated_current_raw_dense_digest_sha256": "f6d4067643644b2e5c4ae74a9a1061235331d6edc96e826af14ab8e440b4b3d3",
+    "repeated_state_max_abs_difference": 0.0,
+    "numerical_tolerance": 1e-14,
+    "numerically_reproducible": true,
+    "seed_ledger_matches_historical_and_repeat": true,
+    "encoder_configuration_matches_historical_and_repeat": true,
+    "note": "Raw dense hashes can differ at last-bit floating-point level; scientific identity is verified from the recorded seeds/configuration, encoder, and numerical matrix agreement."
+  },
+  "timings_seconds": {
+    "preflight": 3.7287800409831107,
+    "optimization": 501.3001395830652,
+    "case_total": 506.8557328339666
+  },
+  "production_hashes_after": {
+    "main_v2.py": "7ba33d062fb6bf0b1934d79ed6eff433f6cc6cc6bdf5cee371ec5e32ff684ce7",
+    "Optimization/objective.py": "ec4e15fce322c34cd1d9beb4037e2cee22913b675ccb093f4a16e268eff7f627",
+    "Optimization/parameterization.py": "b82cfff555d31143e0d0320fdc210afe77476deb0571b1ab4c48574e26393a29",
+    "Optimization/progressive_search.py": "ae064138a1dbc0420f1bb0bc456310d9983731ae776ea5e925bf6cb88a05c844",
+    "Optimization/search.py": "d0ab660f6d9bd43ac24046866edaeaa927431d427a242b3247577c0212513754",
+    "Optimization/specification.py": "db21beb782347b896d353450b7e633f33d7f2ac01637fa2d9103f5fbd2118a4b"
+  },
+  "production_files_unchanged": true,
+  "all_prior_result_hashes_after": {
+    "tests/fixed_error_6q_validation/d1/result.json": "f896a0d80b6721484ff6f332a71b04fdacb537f219a41520f621182c38151d64",
+    "tests/fixed_error_6q_validation/d2/result.json": "0f0f4cec254b42a25d980411e89b3daafc301e4cd2ed31354ed22b3552d5a8da",
+    "tests/fixed_error_6q_validation/d3/result.json": "0c565af1bc2b24497b7ed737cc48d2f76a16c31e19827e57031fe6a31e1b2e3f"
+  },
+  "prior_results_unchanged": true
+}

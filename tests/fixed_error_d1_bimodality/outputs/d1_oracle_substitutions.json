@@ -1,0 +1,250 @@
+{
+  "representatives": [
+    {
+      "baseline_error_class": "low",
+      "baseline_trace_distance": 0.005691704606631042,
+      "fully_oracle_downstream": {
+        "grouping_partition": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "localization_registers": [
+          [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          [
+            [
+              1
+            ],
+            [
+              1
+            ]
+          ],
+          [
+            [
+              2
+            ],
+            [
+              2
+            ]
+          ],
+          [
+            [
+              3
+            ],
+            [
+              3
+            ]
+          ],
+          [
+            [
+              4
+            ],
+            [
+              4
+            ]
+          ],
+          [
+            [
+              5
+            ],
+            [
+              5
+            ]
+          ]
+        ],
+        "peeling_generators": [],
+        "peeling_t": 0,
+        "recovery_rank": 11,
+        "supported": true,
+        "syndrome_bits": [],
+        "trace_distance": 2.3870036451938772e-15
+      },
+      "oracle_conditional_tomography": {
+        "exact_register_count": 6,
+        "supported": true,
+        "trace_distance": 2.2007774975194757e-15
+      },
+      "oracle_structure_stochastic_downstream": {
+        "accepted_per_setting": [
+          41114,
+          41114,
+          41114
+        ],
+        "attempts_per_setting": 41114,
+        "peeling_generators": [],
+        "peeling_t": 0,
+        "recovery_generators": [
+          "IYIIYI",
+          "IZIIII",
+          "XIYYYX",
+          "YIXZIX",
+          "IZIZZI",
+          "IIIIYI",
+          "XIZZII",
+          "XIXIIY",
+          "YIZYYI",
+          "YIXIIX",
+          "XIIZIY"
+        ],
+        "recovery_rank": 11,
+        "supported": true,
+        "syndrome_bits": [],
+        "trace_distance": 0.01028440566521088
+      },
+      "oracle_syndrome": {
+        "learner_bits": [],
+        "not_applicable_t_zero": true,
+        "oracle_bits": [],
+        "oracle_expectations": [],
+        "supported": true,
+        "trace_distance": 0.005691704606631042
+      },
+      "seed": 6230067
+    },
+    {
+      "baseline_error_class": "high",
+      "baseline_trace_distance": 0.09815133322276434,
+      "fully_oracle_downstream": {
+        "grouping_partition": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "localization_registers": [
+          [
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          [
+            [
+              1
+            ],
+            [
+              1
+            ]
+          ],
+          [
+            [
+              2
+            ],
+            [
+              2
+            ]
+          ],
+          [
+            [
+              3
+            ],
+            [
+              3
+            ]
+          ],
+          [
+            [
+              4
+            ],
+            [
+              4
+            ]
+          ],
+          [
+            [
+              5
+            ],
+            [
+              5
+            ]
+          ]
+        ],
+        "peeling_generators": [],
+        "peeling_t": 0,
+        "recovery_rank": 11,
+        "supported": true,
+        "syndrome_bits": [],
+        "trace_distance": 2.3870036451938772e-15
+      },
+      "oracle_conditional_tomography": {
+        "exact_register_count": 6,
+        "supported": true,
+        "trace_distance": 0.09493421984625766
+      },
+      "oracle_structure_stochastic_downstream": {
+        "accepted_per_setting": [
+          41114,
+          41114,
+          41114
+        ],
+        "attempts_per_setting": 41114,
+        "peeling_generators": [],
+        "peeling_t": 0,
+        "recovery_generators": [
+          "IYIIYI",
+          "IZIIII",
+          "XIYYYX",
+          "YIXZIX",
+          "IZIZZI",
+          "IIIIYI",
+          "XIZZII",
+          "XIXIIY",
+          "YIZYYI",
+          "YIXIIX",
+          "XIIZIY"
+        ],
+        "recovery_rank": 11,
+        "supported": true,
+        "syndrome_bits": [],
+        "trace_distance": 0.01193688746743807
+      },
+      "oracle_syndrome": {
+        "learner_bits": [],
+        "not_applicable_t_zero": true,
+        "oracle_bits": [],
+        "oracle_expectations": [],
+        "supported": true,
+        "trace_distance": 0.09815133322276434
+      },
+      "seed": 6230063
+    }
+  ]
+}

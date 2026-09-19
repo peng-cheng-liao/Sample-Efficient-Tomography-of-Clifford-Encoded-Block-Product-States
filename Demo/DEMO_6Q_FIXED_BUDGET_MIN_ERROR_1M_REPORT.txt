@@ -1,0 +1,379 @@
+6Q FIXED-BUDGET / MIN-ERROR 1M — PROGRESSIVE SEARCH REPORT
+============================================================================
+
+1. CONCLUSION
+execution: PASS
+exact historical state identity: PASS
+termination reason: converged
+best configuration found by the progressive finite search: candidate-0096
+No global-optimum claim is made.
+
+2. REPOSITORY / VERSION
+branch: cebp-general-v2
+git HEAD: 00f86fa24f0c2e79835bcdc94eb06b6de9a551a7
+main.py SHA-256 before/after: b98dfacb509d4ceacc678b70d69fd5c879011afa1638528e9cd5741ca1bc3a3f / b98dfacb509d4ceacc678b70d69fd5c879011afa1638528e9cd5741ca1bc3a3f
+main_v2.py SHA-256 before/after: 636ffe2f38aade629f036b3370d67c44282279ee07c53dd5fbde0945f478735f / 636ffe2f38aade629f036b3370d67c44282279ee07c53dd5fbde0945f478735f
+main.tex SHA-256 before/after: 5957da6b5f8a4c969568558303ed9de817e57940c23b5ea670a3451c57ed2a1f / 5957da6b5f8a4c969568558303ed9de817e57940c23b5ea670a3451c57ed2a1f
+Optimization/__init__.py SHA-256 before/after: 3cd6f1efad43604ca7239dfd97d10268b9de20ed4cd7f5d14c6276366f39e540 / 3cd6f1efad43604ca7239dfd97d10268b9de20ed4cd7f5d14c6276366f39e540
+Optimization/checkpoint.py SHA-256 before/after: e16641644b4bb532ddfddf63cc98d1b3b539837b2355d85e6700577db12d6388 / e16641644b4bb532ddfddf63cc98d1b3b539837b2355d85e6700577db12d6388
+Optimization/objective.py SHA-256 before/after: a6d5cc2412b9d66a597cf90e9a6554d71a75aa05c7d8c92c2ebc1b9fec2ea407 / a6d5cc2412b9d66a597cf90e9a6554d71a75aa05c7d8c92c2ebc1b9fec2ea407
+Optimization/parameterization.py SHA-256 before/after: 2908f23abe0302a41507692baa022a96f910e2f79c9dc6c987ebe3ab4efb07cf / 2908f23abe0302a41507692baa022a96f910e2f79c9dc6c987ebe3ab4efb07cf
+Optimization/progressive_search.py SHA-256 before/after: 639f5cc7c09cfa9531c5d40c2a06910d7d9cde66d82f1552a58bb9f7242ef8ce / 639f5cc7c09cfa9531c5d40c2a06910d7d9cde66d82f1552a58bb9f7242ef8ce
+Optimization/search.py SHA-256 before/after: a19c1fc846338f7159414f74e43bd09aa28bcaca8fa85e5988fedd2d0af80cfe / a19c1fc846338f7159414f74e43bd09aa28bcaca8fa85e5988fedd2d0af80cfe
+Optimization/specification.py SHA-256 before/after: 58c7d6748d846bc1d988e58e41b573a978029788d58bb4a8ba10ee99ae232555 / 58c7d6748d846bc1d988e58e41b573a978029788d58bb4a8ba10ee99ae232555
+Optimization/run_parameter_optimization.py SHA-256 before/after: eede79c17a73eb651fc26602d570af38eb79c8672b7217b54a65194ee6956821 / eede79c17a73eb651fc26602d570af38eb79c8672b7217b54a65194ee6956821
+read-only dependencies unchanged during experiment: YES
+commit performed: NO
+push performed: NO
+
+3. INPUT STATE
+authoritative comparison source: Demo/run_small_cebp_demo_6qubit.py
+n=6; d=3; hidden block sizes=(3,3); P_B=0.55
+Clifford steps=18; instance seed=20260820
+Block-A probabilities=[13,5,5,1,5,1,1,1]/32
+designed moments: <Zi>=1/2; <ZiZj>=1/4; <Z1Z2Z3>=0; |kappa_3|=1/8
+encoder gates: (('H', 2), ('S', 4), ('H', 1), ('CNOT', 1, 3), ('S', 5), ('CNOT', 5, 2), ('CNOT', 2, 5), ('CNOT', 5, 0), ('S', 0), ('H', 4), ('S', 0), ('H', 5), ('S', 3), ('H', 2), ('H', 3), ('CNOT', 3, 4), ('S', 5), ('CNOT', 3, 4))
+encoded-state SHA-256: 1e18af214da310b5cbd49505a6eda0e42d01c153b26adde4d38321dcd4fda8cd
+historical fixture identity: PASS
+
+4. CURRENT FIXED-BUDGET SEMANTICS
+objective=fixed_budget_min_error; execution_policy=fixed_budget_graceful
+simulation_backend=batched_counts; max_dense_qubits=6; max_realized_copies=1,000,000
+unused stage capacity carries forward; syndrome is bounded by M_sgn_desired
+tomography uses actual remaining shots with return_details=False
+fixed_budget_epsilon_refinement_enabled=NO
+
+5. PROGRESSIVE SEARCH CONFIGURATION
+  initial_candidates = 16
+  max_candidates = 1024
+  candidate_growth_factor = 2
+  seed_fidelities = (1, 2, 4, 8, 16)
+  comparison_seed_count = 16
+  relative_improvement_threshold = 0.02
+  improvement_patience = 2
+  min_rounds = 3
+  retention_fraction = 0.5
+  checkpoint_every_n_new_evaluations = 16
+search seed: 6100501
+comparison/tuning seeds: (20260821, 610101, 610102, 610103, 610104, 610105, 610106, 610107, 610108, 610109, 610110, 610111, 610112, 610113, 610114, 610115)
+holdout seeds: (610201, 610202, 610203, 610204, 610205, 610206)
+search space: {'alpha_peel': (0.0015, 0.025), 'alpha_rank': (0.008, 0.1), 'alpha_sgn': (5e-05, 0.002), 'c_peel': (1.05, 1.65), 'c_rank': (1.05, 1.65), 'h_min': (0.8, 0.91), 'h_span': (0.04, 0.14), 'theta': (0.08, 0.25), 'eta_test': (0.055, 0.18), 'kappa_ratio': (0.45, 1.4), 'epsilon_tom': (0.35, 1.8), 'peel_weight': (0.2, 5.0), 'recovery_weight': (0.2, 5.0), 'grouping_weight': (0.2, 5.0), 'syndrome_weight': (0.05, 2.0), 'tomography_weight': (0.2, 5.0)}
+OptimizationConfig.number_of_candidates and halving_seed_counts are inactive compatibility fields.
+Holdout is post-selection only.
+
+6. PROGRESSIVE ROUND HISTORY
+round 1: pool=16; newly_activated=16; fidelities=(1, 2, 4); winner=candidate-0012; incumbent_before=N/A; incumbent_after=candidate-0012; old_mean=N/A; challenger_mean=0.0655638997732; selected_mean=0.0655638997732; relative_improvement=N/A; low_streak=0; actual_runs=44; cache_hits=20; unique=44; convergence_stop=NO
+  stage fidelity=1: entering=16; retained=8; best=candidate-0012; best_mean=0.0642592333346; best_max=0.0642592333346; new_runs=16; cache_hits=0
+  stage fidelity=2: entering=8; retained=4; best=candidate-0012; best_mean=0.0653925134062; best_max=0.0665257934779; new_runs=8; cache_hits=8
+  stage fidelity=4: entering=4; retained=1; best=candidate-0012; best_mean=0.0653583799838; best_max=0.0665257934779; new_runs=8; cache_hits=8
+round 2: pool=32; newly_activated=16; fidelities=(1, 2, 4, 8); winner=candidate-0012; incumbent_before=candidate-0012; incumbent_after=candidate-0012; old_mean=0.0655638997732; challenger_mean=0.0655638997732; selected_mean=0.0655638997732; relative_improvement=0; low_streak=1; actual_runs=90; cache_hits=118; unique=90; convergence_stop=NO
+  stage fidelity=1: entering=32; retained=16; best=candidate-0012; best_mean=0.0642592333346; best_max=0.0642592333346; new_runs=16; cache_hits=16
+  stage fidelity=2: entering=16; retained=8; best=candidate-0012; best_mean=0.0653925134062; best_max=0.0665257934779; new_runs=8; cache_hits=24
+  stage fidelity=4: entering=8; retained=4; best=candidate-0012; best_mean=0.0653583799838; best_max=0.0665257934779; new_runs=10; cache_hits=22
+  stage fidelity=8: entering=4; retained=1; best=candidate-0012; best_mean=0.0657173058912; best_max=0.0673494104079; new_runs=12; cache_hits=20
+round 3: pool=64; newly_activated=32; fidelities=(1, 2, 4, 8, 16); winner=candidate-0035; incumbent_before=candidate-0012; incumbent_after=candidate-0035; old_mean=0.0655638997732; challenger_mean=0.0640679165943; selected_mean=0.0640679165943; relative_improvement=0.0228171781117; low_streak=0; actual_runs=196; cache_hits=364; unique=196; convergence_stop=NO
+  stage fidelity=1: entering=64; retained=32; best=candidate-0035; best_mean=0.0641635975818; best_max=0.0641635975818; new_runs=32; cache_hits=32
+  stage fidelity=2: entering=32; retained=16; best=candidate-0035; best_mean=0.0645134254921; best_max=0.0648632534023; new_runs=16; cache_hits=48
+  stage fidelity=4: entering=16; retained=8; best=candidate-0035; best_mean=0.0642875088394; best_max=0.0648632534023; new_runs=18; cache_hits=46
+  stage fidelity=8: entering=8; retained=4; best=candidate-0035; best_mean=0.0639719753182; best_max=0.0648632534023; new_runs=16; cache_hits=48
+  stage fidelity=16: entering=4; retained=1; best=candidate-0035; best_mean=0.0640679165943; best_max=0.0656885529936; new_runs=24; cache_hits=40
+round 4: pool=128; newly_activated=64; fidelities=(1, 2, 4, 8, 16); winner=candidate-0096; incumbent_before=candidate-0035; incumbent_after=candidate-0096; old_mean=0.0640679165943; challenger_mean=0.0633105176222; selected_mean=0.0633105176222; relative_improvement=0.0118218136688; low_streak=1; actual_runs=407; cache_hits=825; unique=407; convergence_stop=NO
+  stage fidelity=1: entering=128; retained=64; best=candidate-0096; best_mean=0.0638910501606; best_max=0.0638910501606; new_runs=64; cache_hits=64
+  stage fidelity=2: entering=64; retained=32; best=candidate-0087; best_mean=0.0636872003482; best_max=0.0648612948589; new_runs=33; cache_hits=95
+  stage fidelity=4: entering=32; retained=16; best=candidate-0096; best_mean=0.063307500314; best_max=0.0640630298995; new_runs=34; cache_hits=94
+  stage fidelity=8: entering=16; retained=8; best=candidate-0096; best_mean=0.0634534543862; best_max=0.0640630298995; new_runs=40; cache_hits=88
+  stage fidelity=16: entering=8; retained=1; best=candidate-0096; best_mean=0.0633105176222; best_max=0.0646519855986; new_runs=40; cache_hits=88
+round 5: pool=256; newly_activated=128; fidelities=(1, 2, 4, 8, 16); winner=candidate-0096; incumbent_before=candidate-0096; incumbent_after=candidate-0096; old_mean=0.0633105176222; challenger_mean=0.0633105176222; selected_mean=0.0633105176222; relative_improvement=0; low_streak=2; actual_runs=833; cache_hits=1695; unique=833; convergence_stop=YES
+  stage fidelity=1: entering=256; retained=128; best=candidate-0194; best_mean=0.063656788336; best_max=0.063656788336; new_runs=128; cache_hits=128
+  stage fidelity=2: entering=128; retained=64; best=candidate-0087; best_mean=0.0636872003482; best_max=0.0648612948589; new_runs=64; cache_hits=192
+  stage fidelity=4: entering=64; retained=32; best=candidate-0096; best_mean=0.063307500314; best_max=0.0640630298995; new_runs=66; cache_hits=190
+  stage fidelity=8: entering=32; retained=16; best=candidate-0096; best_mean=0.0634534543862; best_max=0.0640630298995; new_runs=80; cache_hits=176
+  stage fidelity=16: entering=16; retained=1; best=candidate-0096; best_mean=0.0633105176222; best_max=0.0646519855986; new_runs=88; cache_hits=168
+
+7. TERMINATION / SEARCH CONVERGENCE
+termination_reason: converged
+rounds completed: 5
+final activated candidate pool: 256
+maximum pregenerated catalog size: 1024
+valid pregenerated candidates: 1024
+invalid/rejected sampling attempts: 169
+threshold/patience/min_rounds: 0.02/2/3
+
+8. BEST PARAMETERS
+final incumbent ID: candidate-0096
+  alpha_peel = 0.00612372435696
+  alpha_rank = 0.0282842712475
+  alpha_sgn = 0.000316227766017
+  c_peel = 1.24837591802
+  c_rank = 1.30237107855
+  h_min = 0.882951841952
+  h_span = 0.0578769473492
+  theta = 0.160873870768
+  eta_test = 0.105917831485
+  kappa_ratio = 1.27954488889
+  epsilon_tom = 0.793725393319
+  peel_weight = 0.481020360955
+  recovery_weight = 0.621704039773
+  grouping_weight = 0.829746525487
+  syndrome_weight = 0.0566721892285
+  tomography_weight = 2.7082993299
+normalized fixed-budget stage weights: {'peeling': 0.10240047995321407, 'recovery': 0.13234947463576002, 'grouping': 0.1766379333310915, 'syndrome': 0.012064477614772962, 'tomography': 0.5765476344651613}
+nominal stage caps: {'peeling': 102400, 'recovery': 132349, 'grouping': 176637, 'syndrome': 12064, 'tomography': 576550}
+M1=51200; M2=66174; M_sgn_desired=2010
+
+9. FINAL 16-SEED COMPARISON RESULTS
+seed     D              total   peel  recovery grouping syndrome tomography t clusters registers Jaux truncated copy_budget
+20260821 0.0638910501606 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610101   0.0640630298995 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610102   0.061963919037 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610103   0.063312002159 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610104   0.0635724361221 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610105   0.0632586870709 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610106   0.0636168564845 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610107   0.0639496541557 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610108   0.0637822692509 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610109   0.0622506710452 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610110   0.0638861066981 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610111   0.0633697388678 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610112   0.0622176965519 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610113   0.0625870397106 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610114   0.0625951391428 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610115   0.0646519855986 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+
+10. FINAL 6-SEED HOLDOUT RESULTS
+seed     D              total   peel  recovery grouping syndrome tomography t clusters registers Jaux truncated copy_budget
+610201   0.0621072923673 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610202   0.0637574799449 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610203   0.0636501050778 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610204   0.0630246411561 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610205   0.0619827449823 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+610206   0.0624687920035 1000000 102400 132348   163826   2010     599416     1 (2, 1, 1, 1) (2, 1, 1, 1) 0    YES       NO
+
+11. COMPARISON SUMMARY
+success count/rate: 16/16 (1)
+mean/median/max/population-std D: 0.0633105176222 / 0.063471087495 / 0.0646519855986 / 0.000749994358712
+mean/max copies: 1000000 / 1000000
+
+12. HOLDOUT SUMMARY
+success count/rate: 6/6 (1)
+mean/median/max/population-std D: 0.0628318425887 / 0.0627467165798 / 0.0637574799449 / 0.000700151745398
+mean/max copies: 1000000 / 1000000
+Holdout was evaluated post-selection and caused no retuning.
+
+13. ROLLOVER VERIFICATION
+seed     available_sgn M_desired M_actual syndrome carry_to_tom tomography ledger_sum
+20260821 24876         2010      2010     2010     22866        599416     1000000
+610101   24876         2010      2010     2010     22866        599416     1000000
+610102   24876         2010      2010     2010     22866        599416     1000000
+610103   24876         2010      2010     2010     22866        599416     1000000
+610104   24876         2010      2010     2010     22866        599416     1000000
+610105   24876         2010      2010     2010     22866        599416     1000000
+610106   24876         2010      2010     2010     22866        599416     1000000
+610107   24876         2010      2010     2010     22866        599416     1000000
+610108   24876         2010      2010     2010     22866        599416     1000000
+610109   24876         2010      2010     2010     22866        599416     1000000
+610110   24876         2010      2010     2010     22866        599416     1000000
+610111   24876         2010      2010     2010     22866        599416     1000000
+610112   24876         2010      2010     2010     22866        599416     1000000
+610113   24876         2010      2010     2010     22866        599416     1000000
+610114   24876         2010      2010     2010     22866        599416     1000000
+610115   24876         2010      2010     2010     22866        599416     1000000
+610201   24876         2010      2010     2010     22866        599416     1000000
+610202   24876         2010      2010     2010     22866        599416     1000000
+610203   24876         2010      2010     2010     22866        599416     1000000
+610204   24876         2010      2010     2010     22866        599416     1000000
+610205   24876         2010      2010     2010     22866        599416     1000000
+610206   24876         2010      2010     2010     22866        599416     1000000
+all final seeds satisfy bounded syndrome and carry-to-tomography invariants: YES
+
+14. TOMOGRAPHY METADATA
+Actual-shot fields only; no strict epsilon_C/tau_C_tom claims are made.
+seed=20260821; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610101; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610102; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610103; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610104; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610105; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610106; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610107; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610108; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610109; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610110; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610111; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610112; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610113; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610114; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610115; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610201; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610202; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610203; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610204; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610205; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+seed=610206; budget_truncated=YES; truncated_stages=('grouping',)
+  cluster=(0, 1); J_C=(0, 1); k=2; measured/total=15/15; round_budget=599416; schedule=599416; min/max_shots=39961/39962; complete=YES; truncated=NO
+  cluster=(2,); J_C=(2,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(3,); J_C=(3,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+  cluster=(4,); J_C=(4,); k=1; measured/total=3/3; round_budget=599416; schedule=599416; min/max_shots=199805/199806; complete=YES; truncated=NO
+
+15. THIRD-ORDER STRUCTURAL DIAGNOSTICS
+seed=20260821: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610101: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610102: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610103: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610104: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610105: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610106: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610107: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610108: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610109: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610110: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610111: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610112: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610113: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610114: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610115: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610201: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610202: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610203: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610204: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610205: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+seed=610206: t=1; clusters=(2, 1, 1, 1); registers=(2, 1, 1, 1); J_aux=0; q2=13; q3=0; q3_witness=NO; value=N/A; observables=N/A
+q3 witness present on 0/22 final seeds
+distinct recovered structural outputs: 1
+
+16. SEARCH / CACHE PERFORMANCE
+evaluation attempts: 2550
+actual optimizer learner runs: 839
+cache hits: 1711
+unique semantic cache size: 839
+preflight rejections: 0
+post-selection diagnostic reruns: 22
+optimizer runtime seconds: 1353.697964
+total script runtime through report preparation seconds: 1391.704227
+
+17. COMPARISON WITH OLD 1M RUN
+The obsolete 24-candidate run used four tuning seeds and a (1,2,4) schedule; it is not the active result.
+Previously recorded old-path examples included grouping/syndrome/tomography ledgers of 159944/570128/228174 and 710698/19374/228174.
+The current progressive run preserves the same learner and 1M resource semantics while expanding search evidence.
+
+18. COMPARISON WITH HISTORICAL ~5.94M RUN
+historical copies=5935844; historical D=0.027112976711
+historical peeling_bell_pool=16000
+historical recovery_bell_pool=100000
+historical grouping_ordinary_pool=3056564
+historical syndrome_sign_pool=100
+historical block_tomography_pool=2763180
+progressive comparison mean/max D=0.0633105176222/0.0646519855986
+progressive holdout mean/max D=0.0628318425887/0.0637574799449
+Selection and resource regimes differ; this comparison is descriptive, not paired.
+
+19. LIMITATIONS
+Finite random progressive search; no global-optimum claim.
+Finite 16-seed comparison set and six-seed post-selection holdout.
+Stage-weight optimization is empirical and finite-shot results vary by seed.
+theorem_certified=False may be expected under practical overrides.
+
+20. FINAL CHECKLIST
+[PASS] exact historical state
+[PASS] progressive optimizer public API used
+[PASS] 16 comparison/tuning seeds and six isolated holdout seeds
+[PASS] fixed_budget_graceful + batched_counts + exact 1M ceiling
+[PASS] no final copy_budget failure
+[PASS] fixed-budget epsilon refinement disabled
+[PASS] rollover invariants
+[PASS] actual-shot tomography metadata
+[PASS] read-only dependencies unchanged during run
+[PASS] best configuration found by the progressive finite search (not globally optimal)
+
+OVERALL EXPERIMENT STATUS: PASS
+HISTORICAL POLICY SNAPSHOT NOTICE
+=================================
+This report records the completed pre-2026-08-14 experiment and intentionally
+preserves its original 1024-candidate/0.02-threshold measurements below.  It is
+not the active search policy.  The current fixed_budget_min_error defaults are
+256 candidates and a 0.05 relative-improvement threshold; rerunning
+Demo/run_6q_fixed_budget_min_error_1m.py uses those centralized defaults.

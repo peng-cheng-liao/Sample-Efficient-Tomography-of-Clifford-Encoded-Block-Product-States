@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "algorithm": "relative-path-type-content-sha256-v1",
+  "scope_note": "The d1 comparison excludes d2, d3, test1, test2, audit, mutable results/checkpoints/logs, caches, pyc, and DS_Store entries.",
+  "studies": {
+    "official_d1": {
+      "before": {
+        "entry_count": 206,
+        "aggregate_sha256": "254ade33247d9d6c236ad1847a5ae32bb54d67bb0682254e4148d99e3d6b49a8"
+      },
+      "after": {
+        "entry_count": 206,
+        "aggregate_sha256": "254ade33247d9d6c236ad1847a5ae32bb54d67bb0682254e4148d99e3d6b49a8"
+      },
+      "verdict": "PASS_UNCHANGED"
+    },
+    "test1": {
+      "before": {
+        "entry_count": 37,
+        "aggregate_sha256": "65a69e39137945b316623b8dc433645dc5ffa8462f221d7a94a62ccd7654157f"
+      },
+      "after": {
+        "entry_count": 37,
+        "aggregate_sha256": "65a69e39137945b316623b8dc433645dc5ffa8462f221d7a94a62ccd7654157f"
+      },
+      "verdict": "PASS_UNCHANGED"
+    },
+    "test2": {
+      "before": {
+        "entry_count": 40,
+        "aggregate_sha256": "5ecd6242456b0f4d4ef1723b31e8415a41b31482c87ea5663f7978a8fe2f4b45"
+      },
+      "after": {
+        "entry_count": 40,
+        "aggregate_sha256": "5ecd6242456b0f4d4ef1723b31e8415a41b31482c87ea5663f7978a8fe2f4b45"
+      },
+      "verdict": "PASS_UNCHANGED"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "full_run_skipped_due_to_benchmark_problem",
+  "stage": "full",
+  "configuration": {
+    "n": 6,
+    "d": 3,
+    "partition": [3, 3]
+  },
+  "benchmark_path": "tests/fixed_error_6q_adaptive_budget_validation/benchmark/d3.json",
+  "full_run_launched": false,
+  "full_run_completed": false,
+  "reached_256": false,
+  "reason": "The completed 16-candidate benchmark took 1595.371 seconds and projected the full run at 25525.935 seconds (7.09 hours), 8128 unique budget trials, and 25984 learner evaluations; this was not reasonable local resource use."
+}

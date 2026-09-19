@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "full_run_skipped_due_to_benchmark_problem",
+  "stage": "full",
+  "configuration": {
+    "n": 6,
+    "d": 1,
+    "partition": [1, 1, 1, 1, 1, 1]
+  },
+  "benchmark_path": "tests/fixed_error_6q_adaptive_budget_validation/benchmark/d1.json",
+  "full_run_launched": false,
+  "full_run_completed": false,
+  "reached_256": false,
+  "reason": "The 16-candidate benchmark failed with OverflowError: Python int too large to convert to C long during adaptive upward expansion. Production code was not patched."
+}
